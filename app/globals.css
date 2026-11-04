@@ -1,0 +1,330 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f8f6f1;
+  --fg: #1d2230;
+  --card: #ffffff;
+  --subtle: #f0ece3;
+  --line: #e2ddd1;
+  --muted: #646a78;
+  --accent: #2553c0;
+  --accent-fg: #ffffff;
+  --good: #23865a;
+  --bad: #c0392b;
+  --c-electric: #d39c00;
+  --c-circuits: #2e86de;
+  --c-magnetic: #c0392b;
+  --c-trap: #e67e22;
+  --c-review: #7d5ba6;
+}
+
+.dark {
+  --bg: #11141b;
+  --fg: #e7e5df;
+  --card: #181c25;
+  --subtle: #1f2430;
+  --line: #2c3240;
+  --muted: #9aa1b0;
+  --accent: #82a5ff;
+  --accent-fg: #0d1220;
+  --good: #4cc38a;
+  --bad: #f07167;
+  --c-electric: #f5b700;
+  --c-circuits: #5aa7f0;
+  --c-magnetic: #ee6a5b;
+  --c-trap: #f19a4a;
+  --c-review: #b496dc;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-card: var(--card);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-good: var(--good);
+  --color-bad: var(--bad);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces);
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* ---------- Prose ---------- */
+.guide {
+  --tw-prose-body: var(--fg);
+  --tw-prose-headings: var(--fg);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bold: var(--fg);
+  --tw-prose-counters: var(--muted);
+  --tw-prose-bullets: var(--muted);
+  --tw-prose-hr: var(--line);
+  --tw-prose-quotes: var(--fg);
+  --tw-prose-quote-borders: var(--line);
+  --tw-prose-code: var(--fg);
+  --tw-prose-th-borders: var(--line);
+  --tw-prose-td-borders: var(--line);
+  max-width: 46rem;
+}
+.guide :where(h3) {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-top: 2.75em;
+}
+.guide :where(h4) {
+  font-size: 1.1rem;
+}
+.guide :where(a) {
+  text-underline-offset: 3px;
+}
+.guide :where(code):not(pre code) {
+  background: var(--subtle);
+  padding: 0.1em 0.35em;
+  border-radius: 0.3em;
+  font-weight: 500;
+}
+.guide :where(code):not(pre code)::before,
+.guide :where(code):not(pre code)::after {
+  content: none;
+}
+.guide pre {
+  background: var(--subtle);
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+.guide pre.ascii {
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+.guide blockquote {
+  font-style: normal;
+  border: 1px solid var(--line);
+  background: var(--subtle);
+  border-radius: 0.75rem;
+  padding: 0.25rem 1.1rem;
+}
+.guide blockquote p::before,
+.guide blockquote p::after {
+  content: none;
+}
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.75em 0;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--card);
+}
+.table-wrap table {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.table-wrap th {
+  background: var(--subtle);
+  padding: 0.65rem 0.9rem !important;
+}
+.table-wrap td {
+  padding: 0.6rem 0.9rem !important;
+  vertical-align: middle;
+}
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0.25rem;
+}
+.katex {
+  font-size: 1.07em;
+}
+
+/* ---------- Callouts ---------- */
+.callout {
+  --cc: var(--accent);
+  margin: 1.75em 0;
+  border: 1px solid color-mix(in oklab, var(--cc) 35%, transparent);
+  background: color-mix(in oklab, var(--cc) 7%, var(--card));
+  border-radius: 1rem;
+  padding: 0.9rem 1.2rem;
+}
+.callout-tip {
+  --cc: var(--good);
+}
+.callout-warning,
+.callout-caution {
+  --cc: var(--c-trap);
+}
+.callout-important {
+  --cc: var(--c-review);
+}
+.callout-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cc);
+}
+.callout-body > :first-child {
+  margin-top: 0.35em;
+}
+.callout-body > :last-child {
+  margin-bottom: 0.2em;
+}
+
+/* ---------- Worked examples ---------- */
+.worked {
+  margin: 2.25em 0;
+  border: 1px solid color-mix(in oklab, var(--accent) 30%, var(--line));
+  background: var(--card);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+  border-radius: 1rem;
+  padding: 0.4rem 1.4rem 1rem;
+}
+.worked-head > h3:first-child {
+  margin-top: 0.8em;
+}
+.worked-toggle {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0.25rem 0 0.5rem;
+}
+.worked-toggle:hover {
+  border-color: var(--accent);
+}
+.worked-hidden {
+  border: 1px dashed var(--line);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Details / reveal ---------- */
+.guide details,
+.reveal {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--card);
+  margin: 1.25em 0 2em;
+}
+.guide details > summary,
+.reveal-summary {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+  list-style: none;
+}
+.guide details > summary::-webkit-details-marker {
+  display: none;
+}
+.guide details[open] > summary,
+.reveal-summary[aria-expanded="true"] {
+  border-bottom: 1px solid var(--line);
+}
+.guide details > :not(summary),
+.reveal-body {
+  padding: 0 1.2rem;
+}
+.reveal-body {
+  padding-bottom: 0.5rem;
+}
+.guide details[open] {
+  padding-bottom: 0.5rem;
+}
+
+/* ---------- Task list ---------- */
+.task-list {
+  list-style: none;
+  padding-left: 0 !important;
+}
+.task-item {
+  padding-left: 0 !important;
+}
+.task-item::marker {
+  content: none;
+}
+
+/* ---------- Flashcards ---------- */
+.flip-card {
+  perspective: 1400px;
+}
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flip-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem 2rem;
+  border-width: 1px;
+  border-radius: 1.5rem;
+  backface-visibility: hidden;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 12px 32px -16px rgb(0 0 0 / 0.18);
+  overflow: auto;
+}
+.flip-back {
+  transform: rotateY(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner {
+    transition: none;
+  }
+}
+
+.mermaid-svg svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Print (formula sheet etc.) ---------- */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+  .guide {
+    max-width: none;
+    font-size: 10.5pt;
+  }
+  .worked-toggle {
+    display: none;
+  }
+}
