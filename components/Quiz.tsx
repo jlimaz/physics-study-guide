@@ -78,8 +78,8 @@ export function Quiz({
                 {letters ? String.fromCharCode(65 + i) : String.fromCharCode(65 + pos)}
               </span>
               <span className="flex-1">{opt.content}</span>
-              {answered && opt.correct && <span aria-label="correct answer">✅</span>}
-              {answered && chosen && !opt.correct && <span aria-label="your answer">❌</span>}
+              {answered && opt.correct && <span className="text-xs font-semibold text-good">Correct answer</span>}
+              {answered && chosen && !opt.correct && <span className="text-xs font-semibold text-bad">Your answer</span>}
             </button>
           );
         })}

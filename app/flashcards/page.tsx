@@ -10,7 +10,7 @@ export default function FlashcardsPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
       <header className="mx-auto mb-8 max-w-2xl">
-        <h1 className="font-display text-4xl font-semibold tracking-tight">🃏 Flashcards</h1>
+        <h1 className="font-display text-4xl font-semibold tracking-tight">Flashcards</h1>
         <p className="mt-3 text-muted">
           Say the answer out loud before you flip. Space flips, ← → move, <kbd>K</kbd> = know it, <kbd>R</kbd> = review again.
         </p>

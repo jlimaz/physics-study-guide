@@ -81,11 +81,11 @@ export function RecognizerTrainer({ items }: { items: Item[] }) {
       </div>
 
       <div className="rounded-3xl border border-line bg-card p-6 sm:p-8">
-        <div className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent">👀 The problem says or shows…</div>
+        <div className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent">The problem says or shows</div>
         <div className="quiz-text font-display text-2xl leading-snug">{target.clue}</div>
       </div>
 
-      <div className="mt-6 mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted">🧰 …which tool do you grab?</div>
+      <div className="mt-6 mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted">Which method applies?</div>
       <div className="grid gap-2.5">
         {round.options.map((i, k) => {
           let cls = "border-line hover:border-accent hover:bg-accent/5";
@@ -112,7 +112,7 @@ export function RecognizerTrainer({ items }: { items: Item[] }) {
       {picked !== null && (
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-subtle p-4">
           <span className="font-medium">
-            {picked === round.target ? "✅ Nice. That's the tool." : "❌ Not this time. The right tool is highlighted."}
+            {picked === round.target ? "Correct." : "Incorrect. The right method is highlighted."}
             {chNum && (
               <>
                 {" "}
@@ -123,7 +123,7 @@ export function RecognizerTrainer({ items }: { items: Item[] }) {
             )}
           </span>
           <button type="button" onClick={next} className="min-h-11 rounded-xl bg-accent px-5 font-medium text-accent-fg hover:opacity-90">
-            Next clue ⏎
+            Next clue
           </button>
         </div>
       )}

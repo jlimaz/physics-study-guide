@@ -41,7 +41,7 @@ export const EXAMS: Exam[] = [
           "in the direction of the electric field.",
         ],
         answer: 1,
-        explanation: r`$U = qV$ with $q<0$: to lower $U$ the charge must go to **higher** $V$. Balloon, not ball. 🎈 (That is also *opposite* to $\vec E$, which rules out E.)`,
+        explanation: r`$U = qV$ with $q<0$: to lower $U$ the charge must go to **higher** $V$. (That is also *opposite* to $\vec E$, which rules out E.)`,
       },
       {
         id: "v4-mc2",
@@ -121,7 +121,7 @@ So $I_1 = \dfrac{\varepsilon}{5R}$, $I_3 = \dfrac{2\varepsilon}{5R}$, $I_2 = \df
 **Power in the resistors:**
 $$P = I_1^2(2R) + I_2^2R + I_3^2R = \frac{\varepsilon^2}{R}\left(\frac{2}{25} + \frac{9}{25} + \frac{4}{25}\right) = \boxed{\frac{3\varepsilon^2}{5R}}$$
 
-**Check with the batteries:** $\varepsilon I_1 + \varepsilon I_3 = \varepsilon\cdot\dfrac{3\varepsilon}{5R}$ ✅ Both batteries deliver power, and the totals match.`,
+**Check with the batteries:** $\varepsilon I_1 + \varepsilon I_3 = \varepsilon\cdot\dfrac{3\varepsilon}{5R}$ ✓ Both batteries deliver power, and the totals match.`,
         answer: r`$P = \dfrac{3\varepsilon^2}{5R}$`,
       },
       {
@@ -141,7 +141,7 @@ $$T - |q|vB = \frac{mv^2}{L}$$
 At the breaking point $T = T_{\max}$:
 $$\boxed{|q| = \frac{T_{\max} - \dfrac{mv^2}{L}}{vB} = \frac{T_{\max}L - mv^2}{vBL}}$$
 
-**Check:** units $\dfrac{\text{N}}{(\text{m/s})\,\text{T}} = \text{C}$ ✅. If $B \to 0$, the string breaks at $T_{\max} = mv^2/L$, and then the numerator is zero, as expected ✅.`,
+**Check:** units $\dfrac{\text{N}}{(\text{m/s})\,\text{T}} = \text{C}$ ✓. If $B \to 0$, the string breaks at $T_{\max} = mv^2/L$, and then the numerator is zero, as expected ✓.`,
         answer: r`$|q| = \dfrac{T_{\max} - mv^2/L}{vB}$`,
       },
       {
@@ -183,7 +183,7 @@ $$\Delta V_C = I\cdot\frac R2 = \frac{V_s}{3}$$
 **Suspended → forces balance:** $|q|E = mg$
 $$|q|\frac{V_s}{3\ell} = mg \;\Rightarrow\; \boxed{V_s = \frac{3mg\ell}{q}}$$
 
-**Check:** $\dfrac{\text{N·m}}{\text{C}} = \dfrac{\text{J}}{\text{C}} = \text{V}$ ✅. (Same idea as Worked example 4.3.)`,
+**Check:** $\dfrac{\text{N·m}}{\text{C}} = \dfrac{\text{J}}{\text{C}} = \text{V}$ ✓. (Same idea as Worked example 4.3.)`,
         answer: r`$V = \dfrac{3mg\ell}{q}$`,
       },
     ],
@@ -310,7 +310,7 @@ $$t = \tau\ln\!\left(\frac{1}{1 - 1/\sqrt2}\right) = \tau\ln\!\left(2 + \sqrt2\r
 
 $$\boxed{t = 2RC\,\ln\!\left(2+\sqrt2\right) \approx 2.46\,RC}$$
 
-**Check:** longer than the half-*charge* time $2RC\ln2 \approx 1.39RC$ ✅ (energy lags charge).`,
+**Check:** longer than the half-*charge* time $2RC\ln2 \approx 1.39RC$ ✓ (energy lags charge).`,
         answer: r`$t = 2RC\ln(2+\sqrt2) \approx 2.46\,RC$`,
       },
       {
@@ -331,7 +331,7 @@ $$I_{\text{enc}} = \ell\int_{-z}^{z} J_0\left(1 - \frac{z'^2}{d^2}\right)dz' = \
 $$2B\ell = \mu_0\ell J_0\left(2z - \frac{2z^3}{3d^2}\right)\;\Rightarrow\;\boxed{B = \mu_0J_0\left(z - \frac{z^3}{3d^2}\right)}$$
 pointing **parallel to the slab, to the left** at $P$ (above the middle, current out of the page).
 
-**Checks:** $B(0)=0$ ✅. At $z=d$: $B = \tfrac23\mu_0J_0d$, matching the outside value ✅. Units: $\mu_0\cdot\text{A/m}^2\cdot\text{m} = \text{T}$ ✅.`,
+**Checks:** $B(0)=0$ ✓. At $z=d$: $B = \tfrac23\mu_0J_0d$, matching the outside value ✓. Units: $\mu_0\cdot\text{A/m}^2\cdot\text{m} = \text{T}$ ✓.`,
         answer: r`$B = \mu_0J_0\left(z - \dfrac{z^3}{3d^2}\right)$, parallel to the slab (to the left above the midplane)`,
       },
       {
@@ -347,7 +347,7 @@ $$C_{\text{fuel}} = \frac{2\pi\kappa\varepsilon_0(H/2)}{\ln(b/a)},\qquad C_{\tex
 
 $$\boxed{C = C_{\text{fuel}} + C_{\text{air}} = \frac{\pi\varepsilon_0H(1+\kappa)}{\ln(b/a)} = \frac{(1+\kappa)H}{4K\ln(b/a)}}$$
 
-**Check:** $\kappa = 1$ gives the empty coax $\dfrac{2\pi\varepsilon_0H}{\ln(b/a)}$ ✅.`,
+**Check:** $\kappa = 1$ gives the empty coax $\dfrac{2\pi\varepsilon_0H}{\ln(b/a)}$ ✓.`,
         answer: r`$C = \dfrac{(1+\kappa)H}{4K\ln(b/a)}$`,
       },
     ],

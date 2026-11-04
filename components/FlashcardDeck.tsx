@@ -103,7 +103,7 @@ export function FlashcardDeck({ cards }: { cards: Card[] }) {
         ))}
         <span className="ml-auto flex gap-2">
           <button type="button" onClick={shuffle} className="min-h-9 rounded-full border border-line px-3.5 hover:border-accent">
-            🔀 Shuffle
+            Shuffle
           </button>
           <button
             type="button"
@@ -126,7 +126,7 @@ export function FlashcardDeck({ cards }: { cards: Card[] }) {
 
       {current === undefined ? (
         <div className="rounded-3xl border border-dashed border-line p-12 text-center text-muted">
-          {filter === "review" ? "Your review pile is empty. 🎉" : "You've seen every card."}
+          {filter === "review" ? "Your review pile is empty." : "You've seen every card."}
         </div>
       ) : (
         <>

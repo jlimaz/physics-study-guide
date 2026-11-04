@@ -59,7 +59,7 @@ function splitSections(body: string) {
 }
 
 function parseHeading(heading: string) {
-  // "🗺️ 0. The Map: ..." or "1. ⛰️ Electric Potential: ..."
+  // "0. Exam Overview" (an optional leading/trailing emoji is tolerated)
   const m = heading.match(/(\d+)\.\s*/);
   if (!m) return null;
   const num = Number(m[1]);

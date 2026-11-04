@@ -4,8 +4,8 @@ import { Markdown } from "@/components/Markdown";
 import { ChapterGrid, OverallProgress } from "@/components/Progress";
 
 function blurb(md: string) {
-  const kid = md.split(/### 🧠 Say it like a kid\s*\n/)[1] ?? "";
-  const para = (kid || md)
+  const core = md.split(/### The core idea\s*\n/)[1] ?? "";
+  const para = (core || md)
     .split(/\n\s*\n/)
     .map((p) => p.trim())
     .find((p) => p && !/^[#>|`\-!<*]|^\$\$/.test(p) && p.length > 40);
@@ -18,10 +18,10 @@ function blurb(md: string) {
 }
 
 const TOOLS = [
-  { href: "/flashcards", emoji: "🃏", title: "Flashcards", text: "Flip, sort into “know it” and “review” piles." },
-  { href: "/recognizer", emoji: "🔎", title: "Problem Recognizer", text: "See a clue, name the tool. The skill exams actually test." },
-  { href: "/exams", emoji: "📝", title: "Practice exams", text: "Both v4 and v5: MC you can click, free response with solutions." },
-  { href: "/learn/11", emoji: "🚨", title: "Trap checklist", text: "Tick through it the night before." },
+  { href: "/flashcards", title: "Flashcards", text: "Key facts and formulas, sorted into “know it” and “review” piles." },
+  { href: "/recognizer", title: "Problem Recognizer", text: "Read a problem's clue and pick the method it calls for." },
+  { href: "/exams", title: "Practice exams", text: "Versions 4 and 5, with explanations and full worked solutions." },
+  { href: "/learn/11", title: "Common mistakes", text: "A checklist of the errors that cost the most points." },
 ];
 
 export default function Home() {
@@ -41,8 +41,8 @@ export default function Home() {
             {meta.course ?? "Physics 10320"}
           </p>
           <h1 className="font-display text-4xl leading-[1.05] font-semibold tracking-tight sm:text-6xl">
-            Potential, circuits <span className="text-[var(--c-electric)]">&amp;</span> magnetism,
-            <br className="hidden sm:block" /> explained like you&apos;re ten.
+            Potential, circuits,
+            <br className="hidden sm:block" /> and magnetism.
           </h1>
           <div className="guide prose mt-6 max-w-2xl text-lg">
             <Markdown idPrefix="intro">{getIntro()}</Markdown>
@@ -72,10 +72,7 @@ export default function Home() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {TOOLS.map((t) => (
             <Link key={t.href} href={t.href} className="rounded-2xl border border-line bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-accent hover:shadow-md">
-              <div className="text-2xl" aria-hidden>
-                {t.emoji}
-              </div>
-              <div className="mt-3 font-display text-lg font-semibold">{t.title}</div>
+              <div className="font-display text-lg font-semibold">{t.title}</div>
               <p className="mt-1 text-sm text-muted">{t.text}</p>
             </Link>
           ))}

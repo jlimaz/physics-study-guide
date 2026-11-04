@@ -3,21 +3,19 @@
 import { Children, isValidElement, useState, type ReactNode } from "react";
 import { checkKey, setValue, useValue } from "@/lib/progress";
 
-const CALLOUT: Record<string, { icon: string; label: string }> = {
-  tip: { icon: "💡", label: "Tip" },
-  note: { icon: "📝", label: "Note" },
-  important: { icon: "⭐", label: "Important" },
-  warning: { icon: "🚨", label: "Trap" },
-  caution: { icon: "⚠️", label: "Caution" },
+const CALLOUT: Record<string, string> = {
+  tip: "Tip",
+  note: "Note",
+  important: "Important",
+  warning: "Common mistake",
+  caution: "Caution",
 };
 
 export function Callout({ kind = "note", children }: { kind?: string; children?: ReactNode }) {
-  const c = CALLOUT[kind] ?? CALLOUT.note;
+  const label = CALLOUT[kind] ?? CALLOUT.note;
   return (
     <aside role="note" className={`callout callout-${kind}`}>
-      <div className="callout-label">
-        <span aria-hidden>{c.icon}</span> {c.label}
-      </div>
+      <div className="callout-label">{label}</div>
       <div className="callout-body">{children}</div>
     </aside>
   );
@@ -40,10 +38,10 @@ export function WorkedExample({ intro = "1", children }: { intro?: string; child
             className="worked-toggle"
             aria-expanded={!hidden}
           >
-            {hidden ? "👀 Show the solution" : "🙈 Hide the solution, let me try first"}
+            {hidden ? "Show solution" : "Hide solution and try it first"}
           </button>
           {hidden ? (
-            <div className="worked-hidden">Work it out on paper, then reveal to check each step.</div>
+            <div className="worked-hidden">Solution hidden. Work it on paper, then show it to check each step.</div>
           ) : (
             <div className="worked-body">{rest}</div>
           )}

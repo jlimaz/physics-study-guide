@@ -38,7 +38,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <header className="no-print sticky top-0 z-30 border-b border-line bg-bg/85 backdrop-blur">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-4 px-4 py-2 sm:px-6 md:h-16 md:flex-nowrap md:py-0">
             <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold whitespace-nowrap">
-              <span aria-hidden>⚡🧲</span>
               <span>
                 PHYS 10320 <span className="text-muted">· Exam 2</span>
               </span>

@@ -59,7 +59,7 @@ export function Sidebar({ nav }: { nav: NavItem[] }) {
               >
                 <Ring frac={p.frac} color={topicColor(item.topic)} size={18} />
                 <span className="w-5 shrink-0 font-mono text-xs opacity-70">{item.num}</span>
-                <span className="truncate">{item.title.split(":")[0]}</span>
+                <span className="leading-snug">{item.title.split(":")[0]}</span>
               </Link>
             </li>
           );
@@ -75,7 +75,7 @@ export function MarkDone({ slug, quizIds }: { slug: string; quizIds: string[] })
   return (
     <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-line bg-card p-5">
       <div className="flex-1">
-        <div className="font-semibold">{p.done ? "Chapter complete ✅" : "Finished this chapter?"}</div>
+        <div className="font-semibold">{p.done ? "Chapter complete" : "Finished this chapter?"}</div>
         {p.total > 0 && (
           <div className="text-sm text-muted">
             Quizzes: {p.correct} correct, {p.answered}/{p.total} answered
@@ -109,13 +109,10 @@ export function ChapterGrid({ nav }: { nav: (NavItem & { blurb: string })[] }) {
               style={{ ["--tc" as string]: topicColor(item.topic) }}
             >
               <div className="flex items-center justify-between">
-                <span className="text-2xl" aria-hidden>
-                  {item.emoji}
-                </span>
-                <Ring frac={p.frac} color={topicColor(item.topic)} size={28} />
+                <span className="font-mono text-xs tracking-wide text-[var(--tc)]">Chapter {item.num}</span>
+                <Ring frac={p.frac} color={topicColor(item.topic)} size={24} />
               </div>
               <div>
-                <div className="font-mono text-xs text-muted">Chapter {item.num}</div>
                 <div className="font-display text-lg leading-snug font-semibold">{item.title}</div>
               </div>
               {item.blurb && <p className="line-clamp-2 text-sm text-muted">{item.blurb}</p>}
@@ -177,12 +174,13 @@ export function ThemeToggle() {
       }}
       className="grid size-10 place-items-center rounded-full border border-line hover:border-accent"
     >
-      <span className="dark:hidden" aria-hidden>
-        🌙
-      </span>
-      <span className="hidden dark:inline" aria-hidden>
-        ☀️
-      </span>
+      <svg viewBox="0 0 24 24" className="size-[18px] dark:hidden" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" />
+      </svg>
+      <svg viewBox="0 0 24 24" className="hidden size-[18px] dark:block" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" aria-hidden>
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" />
+      </svg>
     </button>
   );
 }

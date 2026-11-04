@@ -19,11 +19,11 @@ export async function generateMetadata(props: PageProps<"/learn/[slug]">): Promi
 }
 
 const TOPIC_LABEL: Record<string, string> = {
-  electric: "⚡ Electric",
-  circuits: "🔌 Circuits",
-  magnetic: "🧲 Magnetism",
-  trap: "🚨 Traps",
-  review: "📚 Review",
+  electric: "Electrostatics",
+  circuits: "Circuits",
+  magnetic: "Magnetism",
+  trap: "Review",
+  review: "Review",
 };
 
 export default async function ChapterPage(props: PageProps<"/learn/[slug]">) {
@@ -59,9 +59,6 @@ export default async function ChapterPage(props: PageProps<"/learn/[slug]">) {
             {TOPIC_LABEL[section.topic]} · Chapter {section.num}
           </span>
           <h1 className="mt-4 font-display text-4xl leading-tight font-semibold tracking-tight sm:text-5xl">
-            <span aria-hidden className="mr-2">
-              {section.emoji}
-            </span>
             {section.title}
           </h1>
         </header>

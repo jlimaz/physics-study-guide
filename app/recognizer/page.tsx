@@ -10,10 +10,10 @@ export default function RecognizerPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
       <header className="mx-auto mb-8 max-w-3xl">
-        <h1 className="font-display text-4xl font-semibold tracking-tight">🔎 Problem Recognizer</h1>
+        <h1 className="font-display text-4xl font-semibold tracking-tight">Problem Recognizer</h1>
         <p className="mt-3 text-muted">
-          On the exam, the hardest part is often figuring out which tool a problem wants. Read the clue, pick the tool.
-          Keys 1–4 answer, Enter goes to the next clue.
+          On the exam, the hardest step is often identifying which method a problem calls for. Read the clue and pick the method.
+          Press 1–4 to answer and Enter for the next clue.
         </p>
       </header>
       <RecognizerTrainer

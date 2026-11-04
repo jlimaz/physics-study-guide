@@ -48,7 +48,7 @@ function startsWithEmphasis(n: Node) {
 }
 
 /**
- * Wrap every "🛠️ Worked example" (heading or bold paragraph) together with the
+ * Wrap every "Worked example" (heading or bold paragraph) together with the
  * content that follows it into <worked-example intro="N">, where the first N
  * children are the title + problem statement and the rest is the solution.
  */

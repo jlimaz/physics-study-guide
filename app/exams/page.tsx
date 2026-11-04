@@ -18,7 +18,7 @@ export default function ExamsPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
       <header className="mb-8">
-        <h1 className="font-display text-4xl font-semibold tracking-tight">📝 Practice exams</h1>
+        <h1 className="font-display text-4xl font-semibold tracking-tight">Practice exams</h1>
         <p className="mt-3 text-muted">
           6 multiple choice + 4 free response, just like the real thing. Time yourself, do the free response on paper,
           then reveal the solution and grade yourself honestly.
@@ -90,17 +90,17 @@ export default function ExamsPage() {
                 <div className="mt-2">
                   <PdfLink pdf={exam.pdf} page={q.page} />
                 </div>
-                <Reveal summary="💡 Hint (which tool?)">
+                <Reveal summary="Hint: which method?">
                   <div className="guide prose max-w-none py-3">
                     <Markdown>{q.hint}</Markdown>
                   </div>
                 </Reveal>
-                <Reveal summary="🎯 Final answer only">
+                <Reveal summary="Final answer">
                   <div className="py-4 text-lg">
                     <MarkdownInline>{q.answer}</MarkdownInline>
                   </div>
                 </Reveal>
-                <Reveal summary="✅ Full worked solution">
+                <Reveal summary="Full worked solution">
                   <div className="guide prose max-w-none">
                     <Markdown idPrefix={q.id + "-sol"}>{q.solution}</Markdown>
                   </div>
