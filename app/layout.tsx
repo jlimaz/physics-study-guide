@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   description: "Potential, capacitors, circuits, and magnetism: an interactive study guide for PHYS 10320 Exam 2.",
 };
 
-const REPO = "https://github.com/jlimaz/physics-study-guide";
-
 const navbar = (
   <Navbar
     logo={
@@ -20,7 +18,6 @@ const navbar = (
         PHYS 10320 <span className="font-normal opacity-60">· Exam 2</span>
       </span>
     }
-    projectLink={REPO}
   />
 );
 
@@ -35,8 +32,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           navbar={navbar}
           footer={footer}
           pageMap={await getPageMap()}
-          docsRepositoryBase={`${REPO}/tree/main`}
-          editLink="Edit this page on GitHub"
+          editLink={null}
           feedback={{ content: null }}
           copyPageButton={false}
           sidebar={{ defaultMenuCollapseLevel: 1 }}
