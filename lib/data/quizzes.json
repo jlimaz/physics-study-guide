@@ -1,0 +1,398 @@
+{
+  "potential-1": {
+    "question": "A proton is released from rest in a region where the potential decreases as you move in the +y direction. Which way does it accelerate?",
+    "options": [
+      {
+        "text": "+y",
+        "correct": true
+      },
+      {
+        "text": "−y",
+        "correct": false
+      },
+      {
+        "text": "It doesn't move, because V is not zero",
+        "correct": false
+      },
+      {
+        "text": "Perpendicular to y",
+        "correct": false
+      }
+    ],
+    "explanation": "E points toward lower V, so E points along +y. A proton is positive, so it is pushed along E."
+  },
+  "potential-2": {
+    "question": "On a map of equipotentials, where is the electric field strongest?",
+    "options": [
+      {
+        "text": "Where the equipotential lines are farthest apart",
+        "correct": false
+      },
+      {
+        "text": "Where the equipotential lines are closest together",
+        "correct": true
+      },
+      {
+        "text": "Where V is largest",
+        "correct": false
+      },
+      {
+        "text": "Where V = 0",
+        "correct": false
+      }
+    ],
+    "explanation": "|E| ≈ ΔV/Δs. For the same ΔV between neighboring lines, a smaller spacing Δs means a bigger field. A large V by itself says nothing about the field. Only the steepness matters."
+  },
+  "potential-3": {
+    "question": "An electron is free to move. Compared with where it starts, where does it tend to go?",
+    "options": [
+      {
+        "text": "Toward lower potential",
+        "correct": false
+      },
+      {
+        "text": "Toward higher potential",
+        "correct": true
+      },
+      {
+        "text": "Along the electric field",
+        "correct": false
+      },
+      {
+        "text": "Nowhere, because electrons are always in equilibrium",
+        "correct": false
+      }
+    ],
+    "explanation": "U = qV with q < 0. To lower U, the electron must go to higher V. That's the same as moving opposite to E."
+  },
+  "cap-1": {
+    "question": "An isolated (disconnected) parallel-plate capacitor holds charge Q. You pull the plates farther apart. What happens to the stored energy?",
+    "options": [
+      {
+        "text": "Increases",
+        "correct": true
+      },
+      {
+        "text": "Decreases",
+        "correct": false
+      },
+      {
+        "text": "Stays the same because Q is fixed",
+        "correct": false
+      },
+      {
+        "text": "Stays the same because energy is conserved",
+        "correct": false
+      }
+    ],
+    "explanation": "Isolated → Q fixed. Larger d → smaller C = ε₀A/d. U = Q²/(2C) → larger. The extra energy came from the work you did pulling the attracting plates apart."
+  },
+  "cap-2": {
+    "question": "A 6 μF and a 3 μF capacitor are in series across a 9 V battery. What is the charge on the 3 μF capacitor?",
+    "options": [
+      {
+        "text": "27 μC",
+        "correct": false
+      },
+      {
+        "text": "18 μC",
+        "correct": true
+      },
+      {
+        "text": "54 μC",
+        "correct": false
+      },
+      {
+        "text": "9 μC",
+        "correct": false
+      }
+    ],
+    "explanation": "C_eq = (6·3)/(6+3) = 2 μF. Q = C_eq·V = 18 μC. In series, every capacitor carries the same charge, so both have 18 μC."
+  },
+  "cap-3": {
+    "question": "A parallel-plate capacitor is half filled side by side (left half of the area has κ, right half is air, both span the full gap). Its capacitance is:",
+    "options": [
+      {
+        "text": "ε₀A(1+κ)/(2d)",
+        "correct": true
+      },
+      {
+        "text": "2κε₀A/((1+κ)d)",
+        "correct": false
+      },
+      {
+        "text": "κε₀A/d",
+        "correct": false
+      },
+      {
+        "text": "ε₀A/(2κd)",
+        "correct": false
+      }
+    ],
+    "explanation": "Each field line goes straight down through only one material → parallel. Each half has area A/2: C = κε₀(A/2)/d + ε₀(A/2)/d."
+  },
+  "res-1": {
+    "question": "You keep the length of a copper wire fixed but double its diameter. Its resistance becomes:",
+    "options": [
+      {
+        "text": "R/2",
+        "correct": false
+      },
+      {
+        "text": "R/4",
+        "correct": true
+      },
+      {
+        "text": "2R",
+        "correct": false
+      },
+      {
+        "text": "R/8",
+        "correct": false
+      }
+    ],
+    "explanation": "A = πr². Double the diameter → 4× the area → R = ρL/A becomes R/4."
+  },
+  "res-2": {
+    "question": "In the thin section of a wire joined to a thick section, compared to the thick section, the current is ___ and the drift speed is ___.",
+    "options": [
+      {
+        "text": "the same; larger",
+        "correct": true
+      },
+      {
+        "text": "larger; larger",
+        "correct": false
+      },
+      {
+        "text": "smaller; the same",
+        "correct": false
+      },
+      {
+        "text": "the same; the same",
+        "correct": false
+      }
+    ],
+    "explanation": "Current is conserved along a single path. Same I through a smaller A means larger J = n|q|v_d, so faster drift."
+  },
+  "circ-1": {
+    "question": "Bulb A is in series with a parallel pair of bulbs B and C (all identical, ideal battery). You unscrew bulb C. What happens to A and B?",
+    "options": [
+      {
+        "text": "A dimmer, B brighter",
+        "correct": true
+      },
+      {
+        "text": "A brighter, B dimmer",
+        "correct": false
+      },
+      {
+        "text": "Both dimmer",
+        "correct": false
+      },
+      {
+        "text": "Both unchanged",
+        "correct": false
+      }
+    ],
+    "explanation": "Before: R_eq = R + R/2 = 1.5R, A gets 2ε/3 and B gets ε/3. After: R_eq = 2R, A and B each get ε/2. So A goes from 2ε/3 down to ε/2 (dimmer), and B goes from ε/3 up to ε/2 (brighter)."
+  },
+  "circ-2": {
+    "question": "Long after a switch is closed in a DC circuit, the current through a capacitor is:",
+    "options": [
+      {
+        "text": "Zero",
+        "correct": true
+      },
+      {
+        "text": "ε/R",
+        "correct": false
+      },
+      {
+        "text": "Maximum",
+        "correct": false
+      },
+      {
+        "text": "It depends on C",
+        "correct": false
+      }
+    ],
+    "explanation": "A fully charged capacitor has ΔV = Q/C matching whatever it's connected across, and no more charge flows. It acts like a gap in the wire."
+  },
+  "rc-1": {
+    "question": "An uncharged capacitor, a resistor R, a battery ε, and an open switch are in series. The switch closes at t = 0. Right after closing, the voltage across the capacitor is:",
+    "options": [
+      {
+        "text": "0",
+        "correct": true
+      },
+      {
+        "text": "ε",
+        "correct": false
+      },
+      {
+        "text": "ε/2",
+        "correct": false
+      },
+      {
+        "text": "ε/R",
+        "correct": false
+      }
+    ],
+    "explanation": "No charge yet means ΔV = q/C = 0. The capacitor acts like a wire, so the whole ε appears across the resistor."
+  },
+  "rc-2": {
+    "question": "A discharging capacitor's **energy** drops to 1/9 of its starting value at time t. At that moment, its charge is what fraction of the starting charge?",
+    "options": [
+      {
+        "text": "1/3",
+        "correct": true
+      },
+      {
+        "text": "1/9",
+        "correct": false
+      },
+      {
+        "text": "1/81",
+        "correct": false
+      },
+      {
+        "text": "2/3",
+        "correct": false
+      }
+    ],
+    "explanation": "U ∝ q², so q/q₀ = √(1/9) = 1/3. (Discharging energy follows e^(−2t/τ), so this happens at t = τ ln 3.)"
+  },
+  "rc-3": {
+    "question": "A 2 kΩ resistor and a 3 kΩ resistor are in series with two 10 μF capacitors that are in parallel with each other. The time constant is:",
+    "options": [
+      {
+        "text": "100 ms",
+        "correct": true
+      },
+      {
+        "text": "25 ms",
+        "correct": false
+      },
+      {
+        "text": "50 ms",
+        "correct": false
+      },
+      {
+        "text": "12 ms",
+        "correct": false
+      }
+    ],
+    "explanation": "R_eq = 5 kΩ. C_eq = 10 + 10 = 20 μF (parallel capacitors add). τ = (5000 Ω)(20×10⁻⁶ F) = 0.1 s."
+  },
+  "amp-1": {
+    "question": "A counterclockwise Amperian loop encloses a wire carrying 3 A out of the page and a wire carrying 5 A into the page. A third wire, outside the loop, carries 10 A out of the page. What is ∮B·dl?",
+    "options": [
+      {
+        "text": "−2μ₀ A",
+        "correct": true
+      },
+      {
+        "text": "+8μ₀ A",
+        "correct": false
+      },
+      {
+        "text": "+8μ₀ A + 10μ₀ A",
+        "correct": false
+      },
+      {
+        "text": "0, because the outside wire cancels them",
+        "correct": false
+      }
+    ],
+    "explanation": "Counterclockwise → out of page is +. Enclosed: +3 − 5 = −2 A. The outside wire changes B on the loop but adds nothing to the line integral."
+  },
+  "amp-2": {
+    "question": "Two Amperian loops enclose the same single wire carrying current out of the page. Loop 1 is traversed clockwise and loop 2 counterclockwise. Compare their line integrals.",
+    "options": [
+      {
+        "text": "Same size, opposite signs",
+        "correct": true
+      },
+      {
+        "text": "Both positive",
+        "correct": false
+      },
+      {
+        "text": "Both negative",
+        "correct": false
+      },
+      {
+        "text": "It depends on the loop sizes",
+        "correct": false
+      }
+    ],
+    "explanation": "Flipping the walking direction flips which current direction counts as positive. The loop's size and shape don't matter, only what it encloses and how you walk around it."
+  },
+  "force-1": {
+    "question": "An electron moves in the +x direction through a magnetic field pointing in +z. Which way is the magnetic force on it?",
+    "options": [
+      {
+        "text": "+y",
+        "correct": true
+      },
+      {
+        "text": "−y",
+        "correct": false
+      },
+      {
+        "text": "+z",
+        "correct": false
+      },
+      {
+        "text": "zero",
+        "correct": false
+      }
+    ],
+    "explanation": "x̂ × ẑ = −ŷ. For a positive charge that would be −y, but the electron is negative → flip → +y."
+  },
+  "force-2": {
+    "question": "A proton and an electron enter the same uniform B field with the same speed, perpendicular to B. Which statement is true?",
+    "options": [
+      {
+        "text": "They circle in opposite senses, and the proton's circle is much bigger",
+        "correct": true
+      },
+      {
+        "text": "They circle in the same sense with equal radii",
+        "correct": false
+      },
+      {
+        "text": "The electron's circle is bigger",
+        "correct": false
+      },
+      {
+        "text": "Neither curves, because B does no work",
+        "correct": false
+      }
+    ],
+    "explanation": "r = mv/(|q|B): same |q|, v, and B, but the proton is ~1836× heavier → much larger r. Opposite charges → opposite force directions → opposite rotation. (B does no work, but it still changes direction!)"
+  },
+  "force-3": {
+    "question": "Two long parallel wires carry currents in opposite directions. The wires will:",
+    "options": [
+      {
+        "text": "Repel",
+        "correct": true
+      },
+      {
+        "text": "Attract",
+        "correct": false
+      },
+      {
+        "text": "Feel no force",
+        "correct": false
+      },
+      {
+        "text": "Twist",
+        "correct": false
+      }
+    ],
+    "explanation": "Opposite currents repel; same-direction currents attract. It's the reverse of the rule for charges."
+  }
+}

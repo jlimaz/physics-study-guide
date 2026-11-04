@@ -1,0 +1,114 @@
+[
+  {
+    "front": "Which way does a free **negative** charge move in terms of potential?",
+    "back": "Toward higher potential (opposite to E). It lowers its U = qV because q < 0."
+  },
+  {
+    "front": "Direction of E relative to equipotentials?",
+    "back": "Perpendicular to them, pointing from high V to low V."
+  },
+  {
+    "front": "Where is |E| largest on an equipotential map?",
+    "back": "Where the lines are closest together."
+  },
+  {
+    "front": "Potential inside a charged conductor in equilibrium?",
+    "back": "Constant (same as the surface), not necessarily zero. E = 0 inside."
+  },
+  {
+    "front": "4-step recipe for capacitance",
+    "back": "Assume ±Q → Gauss for E → integrate E for ΔV → C = Q/ΔV."
+  },
+  {
+    "front": "Coax capacitance",
+    "back": "C = 2πε₀H / ln(b/a) = H / (2K ln(b/a))"
+  },
+  {
+    "front": "Partial dielectric: series or parallel?",
+    "back": "If one field line crosses both materials → series. If each line stays in one material → parallel."
+  },
+  {
+    "front": "Capacitor still connected to a battery: what's fixed?",
+    "back": "ΔV. Use U = ½CV²."
+  },
+  {
+    "front": "Isolated capacitor: what's fixed?",
+    "back": "Q. Use U = Q²/(2C)."
+  },
+  {
+    "front": "Series capacitors share ___; parallel capacitors share ___",
+    "back": "Q; ΔV"
+  },
+  {
+    "front": "R of a wire",
+    "back": "R = ρL/A. Reshaping keeps the volume LA constant."
+  },
+  {
+    "front": "Microscopic current",
+    "back": "I = n|q|v_d A, J = n|q|v_d = σE"
+  },
+  {
+    "front": "Kirchhoff's two rules",
+    "back": "Junction: current in = current out. Loop: ΣΔV = 0 around any closed loop."
+  },
+  {
+    "front": "Capacitor at t = 0⁺ (uncharged) and at t → ∞",
+    "back": "t = 0⁺: acts like a wire. t → ∞: acts like a gap (no current)."
+  },
+  {
+    "front": "Charging RC: q(t), I(t)",
+    "back": "q = Cε(1 − e^(−t/RC)), I = (ε/R)e^(−t/RC)"
+  },
+  {
+    "front": "Fraction f of max **energy** in an RC circuit ↔ what fraction of max charge?",
+    "back": "√f, because U ∝ q²."
+  },
+  {
+    "front": "B from an infinite wire",
+    "back": "μ₀I/(2πd), circling by the right-hand rule."
+  },
+  {
+    "front": "B at the center of an arc of angle θ",
+    "back": "μ₀Iθ/(4πR), with θ in radians."
+  },
+  {
+    "front": "B from a semi-infinite wire, P opposite its end",
+    "back": "μ₀I/(4πd), half of an infinite wire."
+  },
+  {
+    "front": "Wire segment pointing straight at P contributes…",
+    "back": "Zero (dl ∥ r̂)."
+  },
+  {
+    "front": "Ampère's law",
+    "back": "∮B·dl = μ₀I_enc. Sign from the right-hand rule: curl fingers along the loop, thumb = + current."
+  },
+  {
+    "front": "Inside a uniform slab of half-thickness d (current density J)",
+    "back": "B = μ₀J|z| inside; B = μ₀Jd outside (constant)."
+  },
+  {
+    "front": "Magnetic force on a moving charge",
+    "back": "F = qv×B; zero if v ∥ B; max if v ⊥ B; does no work."
+  },
+  {
+    "front": "Radius of circular motion in B",
+    "back": "r = mv/(|q|B)"
+  },
+  {
+    "front": "Two parallel wires with the same-direction currents",
+    "back": "Attract. F/L = μ₀I₁I₂/(2πd)"
+  },
+  {
+    "front": "Torque on a current loop",
+    "back": "τ = μ×B, μ = NIA, τ_max when μ ⊥ B"
+  },
+  {
+    "front": "Hall effect key insight",
+    "back": "Both carrier signs are pushed to the same edge; the sign of the Hall voltage reveals the carrier sign."
+  },
+  {
+    "front": "Energy density in E and B fields",
+    "back": "u_E = ½ε₀E², u_B = B²/(2μ₀)"
+  }
+]

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 
-type Item = { clue: ReactNode; tool: ReactNode; chapter: string };
+type Item = { clue: ReactNode; tool: ReactNode; chapterSlug?: string; chapterTitle?: string };
 type Round = { target: number; options: number[] };
 
 function makeRound(n: number, prev?: number): Round {
@@ -62,12 +62,11 @@ export function RecognizerTrainer({ items }: { items: Item[] }) {
     });
   }
 
-  if (!round) return <div className="h-96 animate-pulse rounded-3xl bg-subtle" />;
+  if (!round) return <div className="h-96 animate-pulse rounded-xl bg-subtle" />;
   const target = items[round.target];
-  const chNum = target.chapter.match(/\d+/)?.[0];
 
   return (
-    <div className="mx-auto max-w-3xl">
+    <div className="not-prose mt-6">
       <div className="mb-6 flex flex-wrap gap-x-6 gap-y-1 font-mono text-sm text-muted">
         <span>
           score <b className="text-fg">{score.right}</b>/{score.total}
@@ -80,9 +79,9 @@ export function RecognizerTrainer({ items }: { items: Item[] }) {
         </span>
       </div>
 
-      <div className="rounded-3xl border border-line bg-card p-6 sm:p-8">
+      <div className="rounded-xl border border-line bg-card p-5 sm:p-6">
         <div className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent">The problem says or shows</div>
-        <div className="quiz-text font-display text-2xl leading-snug">{target.clue}</div>
+        <div className="quiz-text text-xl font-semibold leading-snug">{target.clue}</div>
       </div>
 
       <div className="mt-6 mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted">Which method applies?</div>
@@ -110,14 +109,14 @@ export function RecognizerTrainer({ items }: { items: Item[] }) {
       </div>
 
       {picked !== null && (
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-subtle p-4">
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-xl bg-subtle p-4">
           <span className="font-medium">
             {picked === round.target ? "Correct." : "Incorrect. The right method is highlighted."}
-            {chNum && (
+            {target.chapterSlug && (
               <>
                 {" "}
-                <Link href={`/learn/${chNum}`} className="text-accent underline-offset-4 hover:underline">
-                  Review chapter {chNum} →
+                <Link href={`/${target.chapterSlug}`} className="text-accent underline-offset-4 hover:underline">
+                  Review: {target.chapterTitle} →
                 </Link>
               </>
             )}

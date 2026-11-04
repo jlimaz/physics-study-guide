@@ -1,0 +1,37 @@
+# Problem Recognizer: Matching Clues to Tools
+
+On the exam, the hardest step is often **identifying which tool a problem calls for**. These clues point to the right one.
+
+| If the problem says or shows… | Use this tool | Chapter |
+|---|---|---|
+| A map of equipotential lines + "which way does it move?" | $\vec E \perp$ lines, high → low $V$; **flip for negative** charges | 1 |
+| "Where is the field strongest?" on an equipotential map | Lines **closest together** | 1 |
+| "A free negative/positive charge tends to move…" | Positive charges move to lower $V$; negative charges to higher $V$ | 1 |
+| Rod, ring, disk + "potential" | $V = \int K\,dq/r$, then $\vec E = -\nabla V$ if needed | 1 |
+| "Capacitance of" a sphere, cylinder, or plates | 4-step recipe: $Q$ → Gauss → $\Delta V$ → $C = Q/\Delta V$ | 2 |
+| Dielectric fills **part** of a capacitor | **Single-field-line test**: series or parallel pieces | 2 |
+| Plates moved / dielectric inserted / "energy changes?" | **Connected (V fixed) or isolated (Q fixed)?** | 2 |
+| Wires of different lengths and areas, stretching, squashing | $R = \rho L/A$; reshaping keeps **volume** constant | 3 |
+| Several resistors, "smallest/largest equivalent" | Series adds; parallel is **smaller than the smallest** | 4 |
+| Multiple batteries in different branches | Kirchhoff (loops + junctions) or the node-voltage shortcut | 4 |
+| "How much power does the circuit use?" | $\sum I^2R$ over resistors = **net** battery power | 4 |
+| A capacitor in a circuit, "long time" / "fully charged" | Capacitor = **gap**; its $\Delta V$ = voltage of whatever it's parallel to | 4 |
+| A charged drop/grain is "suspended," "floats," "levitates" | $\lvert q\rvert E = mg$ with $E = \Delta V/d$ | 4 |
+| "Switch closes at $t = 0$" | $t = 0^+$: $C$ = wire. $t\to\infty$: $C$ = gap. $\tau = R_{\text{eq}}C_{\text{eq}}$ | 5 |
+| "At what time is the **energy** at a fraction of max?" | $U \propto q^2$ → convert to a **charge** fraction ($\sqrt f$), then use logs | 5 |
+| Several long wires + "direction of $\vec B$ at P" | Right-hand rule per wire; $\vec B \perp$ (wire→P line); **add vectors** | 6 |
+| Bent wire with arcs and straight pieces | Building blocks + **zero rule** for pieces pointing at P | 6 |
+| Slab, sheet, thick wire, coax, "current density varies with…" | **Ampère** with a symmetric loop; $I_{\text{enc}} = \int J\,dA$ | 7 |
+| "Line integrals around these paths" | $I_{\text{enc}}$ with **signs** from the loop's right-hand rule | 7 |
+| "Force/torque is greatest/least when…" | $\sin\theta$: 0 when parallel, max when perpendicular | 8 |
+| Charged ball on a string, circle, in a magnetic field | $\vec v\times\vec B$ direction → **flip if negative** → inward/outward → radial $F = mv^2/r$ | 8 |
+| Loop or rod near a long wire, "net force" | $I\vec L\times\vec B$ per side; **cancel by symmetry**; integrate if $B$ varies along a side; **Newton's 3rd** | 8 |
+| Strip with current + $\vec B$ + "$\Delta V$ across it" / "sign of carriers" | **Hall recipe** (assume positive → which edge → compare sign) | 8 |
+
+## Drill
+
+Read the clue and pick the method it calls for. Press 1–4 to answer and Enter for the next clue.
+
+<RecognizerTrainer />
+
+<ChapterComplete slug="problem-recognizer" />

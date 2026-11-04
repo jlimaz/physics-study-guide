@@ -1,0 +1,155 @@
+[
+  {
+    "num": 0,
+    "slug": "overview",
+    "title": "Exam Overview",
+    "topic": "review",
+    "quizIds": [],
+    "blurb": "Your course splits topics into Focus (F) (definitely tested, probably more than once) and Eligible (E) (fair game, but less emphasized)."
+  },
+  {
+    "num": 1,
+    "slug": "electric-potential",
+    "title": "Electric Potential",
+    "topic": "electric",
+    "quizIds": [
+      "potential-1",
+      "potential-2",
+      "potential-3"
+    ],
+    "blurb": "The electric potential (in volts) assigns a number to every point in space: the potential energy per unit charge that a test charge would have there. A useful picture is a landscape in which plays the role of height."
+  },
+  {
+    "num": 2,
+    "slug": "capacitors",
+    "title": "Capacitors and Dielectrics",
+    "topic": "electric",
+    "quizIds": [
+      "cap-1",
+      "cap-2",
+      "cap-3"
+    ],
+    "blurb": "A capacitor is two conductors separated by an insulator or vacuum. A battery connected across it moves electrons from one conductor to the other, leaving one at and the other at ."
+  },
+  {
+    "num": 3,
+    "slug": "current-and-resistance",
+    "title": "Current and Resistance",
+    "topic": "circuits",
+    "quizIds": [
+      "res-1",
+      "res-2"
+    ],
+    "blurb": "A metal wire contains an enormous number of free electrons. When a battery is connected, an electric field is set up inside the wire and pushes on all of them. They collide with the atomic lattice constantly, so their average drift velocity is small (around a millimeter per second), but the whole population starts drifting at the same time, which is why a circuit responds almost instantly."
+  },
+  {
+    "num": 4,
+    "slug": "dc-circuits",
+    "title": "DC Circuits and Kirchhoff's Rules",
+    "topic": "circuits",
+    "quizIds": [
+      "circ-1",
+      "circ-2"
+    ],
+    "blurb": "A pump analogy captures most of how circuits behave: A battery acts like a pump: it raises each coulomb of charge to a higher potential. The rise per coulomb is the emf . A resistor is where that potential is used up: charge drops in potential as it passes through. An ideal wire has no resistance, so there is no potential change along it. Going all the way around any closed loop returns you to the same potential you started from."
+  },
+  {
+    "num": 5,
+    "slug": "rc-circuits",
+    "title": "RC Circuits",
+    "topic": "circuits",
+    "quizIds": [
+      "rc-1",
+      "rc-2",
+      "rc-3"
+    ],
+    "blurb": "When an uncharged capacitor is connected to a battery through a resistor, the current is largest at the start, because an empty capacitor has no voltage opposing the battery. As charge builds up, the capacitor's voltage opposes the battery more and more, so the current falls off exponentially. The capacitor approaches full charge asymptotically; after a few time constants it is effectively full."
+  },
+  {
+    "num": 6,
+    "slug": "biot-savart",
+    "title": "Magnetic Fields from Currents: Biot–Savart",
+    "topic": "magnetic",
+    "quizIds": [],
+    "blurb": "A current in a long straight wire produces magnetic field lines that form circles centered on the wire."
+  },
+  {
+    "num": 7,
+    "slug": "amperes-law",
+    "title": "Ampère's Law",
+    "topic": "magnetic",
+    "quizIds": [
+      "amp-1",
+      "amp-2"
+    ],
+    "blurb": "Choose any closed path, called an Amperian loop. Go around it, and at each step multiply the component of along your direction of travel by the step length; add these up. Ampère's law says the total depends only on the current passing through the loop:"
+  },
+  {
+    "num": 8,
+    "slug": "magnetic-forces",
+    "title": "Magnetic Forces and the Hall Effect",
+    "topic": "magnetic",
+    "quizIds": [
+      "force-1",
+      "force-2",
+      "force-3"
+    ],
+    "blurb": "The magnetic force on a charge has three distinctive properties: It is zero for a charge at rest. It is zero for a charge moving parallel to the field. It is always perpendicular to both the velocity and the field, so it changes the direction of motion but never the speed. A magnetic force does no work."
+  },
+  {
+    "num": 9,
+    "slug": "magnetic-materials",
+    "title": "Magnetic Materials and Field Energy",
+    "topic": "magnetic",
+    "quizIds": [],
+    "blurb": "Every atom has tiny current loops (electrons orbiting and spinning), so every atom can act like a tiny magnet."
+  },
+  {
+    "num": 10,
+    "slug": "problem-recognizer",
+    "title": "Problem Recognizer: Matching Clues to Tools",
+    "topic": "review",
+    "quizIds": [],
+    "blurb": "On the exam, the hardest step is often identifying which tool a problem calls for. These clues point to the right one."
+  },
+  {
+    "num": 11,
+    "slug": "common-mistakes",
+    "title": "Common Mistakes Checklist",
+    "topic": "trap",
+    "quizIds": [],
+    "blurb": ""
+  },
+  {
+    "num": 12,
+    "slug": "formula-sheet",
+    "title": "One-Page Formula Sheet",
+    "topic": "review",
+    "quizIds": [],
+    "blurb": ""
+  },
+  {
+    "num": 13,
+    "slug": "flashcards",
+    "title": "Flashcards",
+    "topic": "review",
+    "quizIds": [],
+    "blurb": ""
+  },
+  {
+    "num": 14,
+    "slug": "mixed-practice",
+    "title": "Mixed Practice",
+    "topic": "review",
+    "quizIds": [],
+    "blurb": "(a) Each corner is from the center. . (b) No. Both charges push away from themselves and both charges pull toward themselves, so all four field contributions have a component pointing from the side toward the side. even though . (c) . </details>"
+  },
+  {
+    "num": 15,
+    "slug": "study-plan",
+    "title": "A 3-Day Study Plan",
+    "topic": "review",
+    "quizIds": [],
+    "blurb": ""
+  }
+]

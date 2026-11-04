@@ -1,0 +1,27 @@
+# Magnetic Materials and Field Energy
+
+### Three types of magnetic material
+
+Every atom has tiny current loops (electrons orbiting and spinning), so every atom can act like a tiny magnet.
+
+| Type | In short | What's happening | Response to a magnet |
+|---|---|---|---|
+| **Diamagnetic** (water, copper, most organic matter) | Weakly opposes the field | The applied field induces tiny moments that **oppose** it. Present in all materials. | Very weakly **repelled** |
+| **Paramagnetic** (aluminum, O₂) | Weakly aligns with the field | Atoms have permanent moments that **partly line up** with $\vec B$; heat keeps scrambling them | Weakly **attracted**; gone when the field is removed |
+| **Ferromagnetic** (iron, nickel, cobalt) | Strongly aligns; can stay magnetized | Neighbors lock together in **domains**; domains grow and align | **Strongly** attracted; can **stay magnetized** (permanent magnets); lose it above the Curie temperature |
+
+### Energy stored in fields (LO 2.6)
+
+| Field | Energy density (J/m³) | Device version |
+|---|---|---|
+| Electric | $u_E = \tfrac12\varepsilon_0 E^2$ (times $\kappa$ in a dielectric) | Capacitor: $U = \tfrac12 CV^2$ |
+| Magnetic | $u_B = \dfrac{B^2}{2\mu_0}$ | Inductor: $U = \tfrac12 L I^2$ |
+
+**To get total energy:** $U = \displaystyle\int u\,dV$. If the field is uniform, it's just $u \times \text{volume}$. If not, slice the volume into pieces where it's constant (cylindrical shells, for example: $dV = 2\pi r H\,dr$).
+
+#### Worked example 9.1
+
+A solenoid (length $\ell$, area $A$, $n$ turns/m, current $I$):
+$B = \mu_0 nI$ → $U = \dfrac{(\mu_0 nI)^2}{2\mu_0}A\ell = \tfrac12\mu_0 n^2 A\ell\, I^2$. Compare with $\tfrac12LI^2$: $L = \mu_0 n^2 A\ell$. ✓
+
+<ChapterComplete slug="magnetic-materials" />

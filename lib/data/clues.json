@@ -1,0 +1,117 @@
+[
+  {
+    "clue": "A map of equipotential lines + \"which way does it move?\"",
+    "tool": "$\\vec E \\perp$ lines, high → low $V$; **flip for negative** charges",
+    "chapter": 1
+  },
+  {
+    "clue": "\"Where is the field strongest?\" on an equipotential map",
+    "tool": "Lines **closest together**",
+    "chapter": 1
+  },
+  {
+    "clue": "\"A free negative/positive charge tends to move…\"",
+    "tool": "Positive charges move to lower $V$; negative charges to higher $V$",
+    "chapter": 1
+  },
+  {
+    "clue": "Rod, ring, disk + \"potential\"",
+    "tool": "$V = \\int K\\,dq/r$, then $\\vec E = -\\nabla V$ if needed",
+    "chapter": 1
+  },
+  {
+    "clue": "\"Capacitance of\" a sphere, cylinder, or plates",
+    "tool": "4-step recipe: $Q$ → Gauss → $\\Delta V$ → $C = Q/\\Delta V$",
+    "chapter": 2
+  },
+  {
+    "clue": "Dielectric fills **part** of a capacitor",
+    "tool": "**Single-field-line test**: series or parallel pieces",
+    "chapter": 2
+  },
+  {
+    "clue": "Plates moved / dielectric inserted / \"energy changes?\"",
+    "tool": "**Connected (V fixed) or isolated (Q fixed)?**",
+    "chapter": 2
+  },
+  {
+    "clue": "Wires of different lengths and areas, stretching, squashing",
+    "tool": "$R = \\rho L/A$; reshaping keeps **volume** constant",
+    "chapter": 3
+  },
+  {
+    "clue": "Several resistors, \"smallest/largest equivalent\"",
+    "tool": "Series adds; parallel is **smaller than the smallest**",
+    "chapter": 4
+  },
+  {
+    "clue": "Multiple batteries in different branches",
+    "tool": "Kirchhoff (loops + junctions) or the node-voltage shortcut",
+    "chapter": 4
+  },
+  {
+    "clue": "\"How much power does the circuit use?\"",
+    "tool": "$\\sum I^2R$ over resistors = **net** battery power",
+    "chapter": 4
+  },
+  {
+    "clue": "A capacitor in a circuit, \"long time\" / \"fully charged\"",
+    "tool": "Capacitor = **gap**; its $\\Delta V$ = voltage of whatever it's parallel to",
+    "chapter": 4
+  },
+  {
+    "clue": "A charged drop/grain is \"suspended,\" \"floats,\" \"levitates\"",
+    "tool": "$\\lvert q\\rvert E = mg$ with $E = \\Delta V/d$",
+    "chapter": 4
+  },
+  {
+    "clue": "\"Switch closes at $t = 0$\"",
+    "tool": "$t = 0^+$: $C$ = wire. $t\\to\\infty$: $C$ = gap. $\\tau = R_{\\text{eq}}C_{\\text{eq}}$",
+    "chapter": 5
+  },
+  {
+    "clue": "\"At what time is the **energy** at a fraction of max?\"",
+    "tool": "$U \\propto q^2$ → convert to a **charge** fraction ($\\sqrt f$), then use logs",
+    "chapter": 5
+  },
+  {
+    "clue": "Several long wires + \"direction of $\\vec B$ at P\"",
+    "tool": "Right-hand rule per wire; $\\vec B \\perp$ (wire→P line); **add vectors**",
+    "chapter": 6
+  },
+  {
+    "clue": "Bent wire with arcs and straight pieces",
+    "tool": "Building blocks + **zero rule** for pieces pointing at P",
+    "chapter": 6
+  },
+  {
+    "clue": "Slab, sheet, thick wire, coax, \"current density varies with…\"",
+    "tool": "**Ampère** with a symmetric loop; $I_{\\text{enc}} = \\int J\\,dA$",
+    "chapter": 7
+  },
+  {
+    "clue": "\"Line integrals around these paths\"",
+    "tool": "$I_{\\text{enc}}$ with **signs** from the loop's right-hand rule",
+    "chapter": 7
+  },
+  {
+    "clue": "\"Force/torque is greatest/least when…\"",
+    "tool": "$\\sin\\theta$: 0 when parallel, max when perpendicular",
+    "chapter": 8
+  },
+  {
+    "clue": "Charged ball on a string, circle, in a magnetic field",
+    "tool": "$\\vec v\\times\\vec B$ direction → **flip if negative** → inward/outward → radial $F = mv^2/r$",
+    "chapter": 8
+  },
+  {
+    "clue": "Loop or rod near a long wire, \"net force\"",
+    "tool": "$I\\vec L\\times\\vec B$ per side; **cancel by symmetry**; integrate if $B$ varies along a side; **Newton's 3rd**",
+    "chapter": 8
+  },
+  {
+    "clue": "Strip with current + $\\vec B$ + \"$\\Delta V$ across it\" / \"sign of carriers\"",
+    "tool": "**Hall recipe** (assume positive → which edge → compare sign)",
+    "chapter": 8
+  }
+]

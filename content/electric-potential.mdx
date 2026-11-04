@@ -1,0 +1,143 @@
+# Electric Potential
+
+### The core idea
+
+The **electric potential $V$** (in volts) assigns a number to every point in space: the potential energy per unit charge that a test charge would have there. A useful picture is a landscape in which $V$ plays the role of height.
+
+- A **positive charge** moves toward **lower** $V$, like a ball rolling downhill.
+- A **negative charge** moves toward **higher** $V$, because for $q < 0$ a higher $V$ means a lower $U = qV$.
+- In both cases the charge is doing the same thing: **lowering its potential energy $U$**.
+
+The **electric field $\vec E$** is the slope of this landscape. It points from high $V$ to low $V$, and it is **stronger where $V$ changes more quickly** with distance.
+
+> [!TIP]
+>
+> **Summary:**
+>
+> $$
+> U = qV \qquad \vec E \text{ points toward lower } V \qquad \text{faster change in } V = \text{stronger } \vec E
+> $$
+>
+
+### The key formulas
+
+| Idea | Formula | In words |
+|---|---|---|
+| Potential of a point charge | $V = \dfrac{Kq}{r}$ (zero at infinity) | Positive charges raise $V$ nearby; negative charges lower it |
+| Many charges (**superposition**) | $V = \sum_i \dfrac{Kq_i}{r_i}$ | Potentials are scalars, so they simply add |
+| Continuous charge | $V = \displaystyle\int \dfrac{K\,dq}{r}$ | Split the charge into pieces $dq$ and sum |
+| Potential energy of a charge | $U = qV$ | Charge times potential |
+| Change in energy | $\Delta U = q\,\Delta V$ | |
+| Work by the field | $W_{\text{field}} = -\Delta U$ | |
+| $V$ from $\vec E$ | $\Delta V = V_b - V_a = -\displaystyle\int_a^b \vec E \cdot d\vec\ell$ | Moving along $\vec E$ lowers $V$ |
+| $\vec E$ from $V$ | $E_x = -\dfrac{\partial V}{\partial x}$, etc. | $\vec E$ is minus the gradient of $V$ |
+| Uniform field | $\lvert\Delta V\rvert = E\,d$ | Uniform field |
+| Energy of a group of charges | $U = \sum_{\text{pairs}} \dfrac{K q_i q_j}{r_{ij}}$ | Count each pair **once** |
+
+$K = \dfrac{1}{4\pi\varepsilon_0} \approx 8.99\times 10^9\ \text{N·m}^2/\text{C}^2$
+
+> [!NOTE]
+>
+> **Why potential is easier than field:** $V$ is a plain number (a **scalar**). When you add up potentials from many charges, you just add numbers. With $\vec E$ you have to add arrows and break them into components. So when a problem lets you pick, **find $V$ first, then take a derivative to get $\vec E$.**
+
+### Equipotentials
+
+An **equipotential** is a line (or surface) where $V$ is the same everywhere, just like a contour line on a hiking map.
+
+Four rules:
+
+1. **$\vec E$ is always perpendicular to equipotentials.** (The steepest way down a hill is straight across the contour lines, never along them.)
+2. **$\vec E$ points from higher $V$ to lower $V$.**
+3. **Lines close together → strong field.** Lines far apart → weak field. (Closely spaced contour lines mean steep ground.)
+4. **Moving along an equipotential costs zero work.** (Walking along a contour line, you never go up or down.)
+
+```text
+   +30V     +20V     +10V      0V     -10V
+    |        |        |        |        |
+    |  ───►  |  ───►  |  ───►  |  ───►  |      E points this way (high → low)
+    |        |        |        |        |
+                                          ● proton here → pushed RIGHT  (rolls downhill)
+                                          ● electron here → pushed LEFT (floats uphill)
+```
+
+> [!WARNING]
+>
+> **Trap:** Students remember "charges move along $\vec E$" and forget the sign. **Only positive charges** go along $\vec E$. **Negative charges go opposite to $\vec E$**, toward **higher** potential. Before answering any direction question, check the sign of the charge.
+
+**Reading an equipotential diagram, step by step:**
+1. Find which side has higher numbers (higher $V$).
+2. At your point, imagine the line **perpendicular** to the equipotential through that point.
+3. $\vec E$ points along that perpendicular **toward the lower-$V$ side**.
+4. Force: $\vec F = q\vec E$. Positive → same way as $\vec E$. Negative → opposite.
+5. Strongest field? Look where the lines are **squeezed closest together**.
+
+### Conductors in equilibrium
+
+When charges in a conductor stop moving (**electrostatic equilibrium**):
+- $\vec E = 0$ **inside** the metal.
+- So the **whole conductor is a single equipotential**: same $V$ everywhere, inside and on the surface. (This does **not** mean $V = 0$.)
+- Any extra charge sits on the **outer surface**.
+- Just outside, $\vec E$ is **perpendicular** to the surface.
+- For a sphere of radius $R$ with charge $Q$: $V = \dfrac{KQ}{R}$ at the surface **and everywhere inside**.
+
+> *Why:* free electrons in a conductor move whenever a potential difference exists inside it, so they keep redistributing until every point is at the same $V$.
+
+### Worked example 1.1: Potential on the axis of a charged rod
+
+A thin rod of length $L$ has uniform charge density $\lambda$. It lies on the $x$-axis from $x = 0$ to $x = L$. Find $V$ at a point on the axis at $x = -d$ (a distance $d$ to the left of the rod's end).
+
+<Solution>
+
+**Step 1: Divide the rod.** Take a small piece at position $x$, of length $dx$. Its charge is $dq = \lambda\,dx$.
+
+**Step 2: Distance.** From the point at $-d$ to the piece at $x$: $r = x + d$.
+
+**Step 3: Integrate.**
+
+$$
+V = \int_0^L \frac{K\lambda\,dx}{x+d} = K\lambda\,\ln\!\left(\frac{L+d}{d}\right)
+$$
+
+
+**Step 4: Sanity check (limiting case).** If $d \gg L$: $\ln(1 + L/d) \approx L/d$, so $V \approx \dfrac{K\lambda L}{d} = \dfrac{KQ}{d}$. ✓ It looks like a point charge from far away.
+
+**Step 5 (bonus): Get the field.** Treat $d$ as the variable: as you move left, $d$ grows. $E = -\dfrac{dV}{d(\text{position})}$ gives
+$E = K\lambda\left(\dfrac1d - \dfrac{1}{L+d}\right)$, pointing **away** from the rod (left) if $\lambda > 0$. ✓ Matches what you'd get from Coulomb's law.
+
+</Solution>
+
+### Worked example 1.2: Ring of charge → field from potential
+
+Ring of radius $R$, total charge $Q$. Point on the axis, distance $z$ from the center.
+
+<Solution>
+
+Every bit of the ring is the **same distance** $\sqrt{R^2+z^2}$ away, so:
+
+$$
+V(z) = \frac{KQ}{\sqrt{R^2 + z^2}}
+$$
+
+
+Now take the slope: $E_z = -\dfrac{dV}{dz} = \dfrac{KQz}{(R^2+z^2)^{3/2}}$ ✓ (the same answer you got with much more pain in Exam 1).
+
+</Solution>
+
+### Potential energy and motion: energy conservation
+
+When a charge moves only because of electric forces:
+
+$$
+K_i + qV_i = K_f + qV_f \quad\Longrightarrow\quad \tfrac12 m v_f^2 = \tfrac12 m v_i^2 - q\,(V_f - V_i)
+$$
+
+
+Example: An electron ($q = -e$) released from rest goes from $V = 0$ to $V = +100$ V. Then $\Delta U = (-e)(100\text{ V}) < 0$: it **loses** potential energy and **gains** $100$ eV of kinetic energy.
+
+<Quiz id="potential-1" />
+
+<Quiz id="potential-2" />
+
+<Quiz id="potential-3" />
+
+<ChapterComplete slug="electric-potential" />

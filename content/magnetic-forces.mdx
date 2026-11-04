@@ -1,0 +1,173 @@
+# Magnetic Forces and the Hall Effect
+
+### The core idea
+
+The magnetic force on a charge has three distinctive properties:
+- It is **zero for a charge at rest**.
+- It is **zero for a charge moving parallel** to the field.
+- It is always **perpendicular** to both the velocity and the field, so it changes the direction of motion but **never the speed**. A magnetic force does **no work**.
+
+### The force law
+
+
+$$
+\vec F = q\,\vec v\times\vec B,\qquad \lvert\vec F\rvert = \lvert q\rvert vB\sin\theta
+$$
+
+
+| Angle between $\vec v$ and $\vec B$ | Force |
+|---|---|
+| 0° or 180° (parallel / antiparallel) | **zero** (least) |
+| 90° (perpendicular) | **maximum** $\lvert q\rvert vB$ |
+
+**Right-hand rule #3:** Point your fingers along $\vec v$, curl them toward $\vec B$; your thumb is $\vec F$ **for a positive charge**. For a **negative** charge, **flip** the answer.
+
+**Cross-product cheat sheet:** $\hat x\times\hat y = \hat z$, $\hat y\times\hat z = \hat x$, $\hat z\times\hat x = \hat y$ (going backwards gives a minus sign).
+
+Full **Lorentz force** with both fields: $\vec F = q(\vec E + \vec v\times\vec B)$.
+*Velocity selector:* crossed $\vec E$ and $\vec B$; particles with $v = E/B$ go straight through.
+
+### Circular motion in a uniform B
+
+A charge moving perpendicular to a uniform $\vec B$ goes in a **circle**, because the magnetic force always points toward the center:
+
+$$
+\lvert q\rvert vB = \frac{mv^2}{r} \;\Rightarrow\; r = \frac{mv}{\lvert q\rvert B},\qquad \omega = \frac{\lvert q\rvert B}{m},\qquad T = \frac{2\pi m}{\lvert q\rvert B}
+$$
+
+The period **doesn't depend on speed**: faster particles make bigger circles in the same time.
+
+### Worked example 8.1: Magnetic force and string tension
+
+A ball with **positive** charge $q$ and mass $m$ is tied to a string of length $L$ and swings in a horizontal circle (ignore gravity's effect on the circle). Looking down from above, it goes **clockwise**, and a uniform $\vec B$ points **up, toward you** (out of the page in the top view). Find the string tension at speed $v$.
+
+<Solution>
+
+**Recipe:**
+1. **Top-view sketch.** Pick an easy point, like the ball at the **rightmost** point of the circle.
+2. **Velocity there:** clockwise → moving **down the page** ($-\hat y$).
+3. **Cross product:** $\vec v\times\vec B \propto (-\hat y)\times(\hat z) = -\hat x$ → points **left**, toward the **center**.
+4. **Charge sign:** positive, so no flip. Magnetic force points **inward** with size $qvB$.
+5. **Newton's 2nd law (radial, inward = +):** (sum of inward forces) $= \dfrac{mv^2}{L}$
+
+$$
+T + qvB = \frac{mv^2}{L} \;\Rightarrow\; T = \frac{mv^2}{L} - qvB
+$$
+
+
+**Limiting-case check:** $T = 0$ when $v = \dfrac{qBL}{m}$, meaning the ball circles with no string at all. That's exactly $r = \dfrac{mv}{qB}$ from above. ✓
+
+**What if things flip?** Reverse the rotation, reverse $\vec B$, **or** make the charge negative (**any one** of these) and the magnetic force points **outward**. Then the string must supply more tension:
+
+$$
+T - \lvert q\rvert vB = \frac{mv^2}{L}
+$$
+
+
+</Solution>
+
+> [!TIP]
+>
+> **Two sign flips cancel.** Negative charge + reversed $\vec B$ → back to inward. Count the sign flips.
+
+### Force on a current-carrying wire
+
+A wire is just a crowd of moving charges:
+
+$$
+\vec F = I\vec L\times\vec B\quad(\text{straight wire, uniform }\vec B),\qquad d\vec F = I\,d\vec\ell\times\vec B\quad(\text{general})
+$$
+
+
+- A **closed loop** in a **uniform** field: net force $= 0$ (but there may be a torque!).
+- A **closed loop** in a **non-uniform** field (like the field near a long wire): net force can be **non-zero**, because the sides sit in different field strengths.
+- A **curved** wire in a uniform field feels the same force as a straight wire connecting its endpoints.
+
+### Two parallel wires
+
+
+$$
+\frac{F}{L} = \frac{\mu_0 I_1 I_2}{2\pi d}
+$$
+
+- **Currents in the same direction attract.**
+- **Currents in opposite directions repel.**
+
+> *Note:* this is the reverse of the rule for electric charges, where like charges repel.
+
+> [!IMPORTANT]
+>
+> **Use Newton's third law.** The force that wire A exerts on object B is **equal and opposite** to the force B exerts on A. If one is hard to compute, compute the other one and flip it. Also, in a loop, look for pairs of sides whose forces **cancel by symmetry** before you integrate anything.
+
+### Worked example 8.2: A rod next to a long wire
+
+A long straight wire along the $y$-axis carries current $I_1$ in $+\hat y$. A short rod lies on the $x$-axis from $x = a$ to $x = b$ and carries current $I_2$ in $+\hat x$ (away from the long wire). Find the force on the rod.
+
+<Solution>
+
+1. **Field of the long wire at the rod:** $B = \dfrac{\mu_0 I_1}{2\pi x}$. Direction: on the $+x$ side, $\hat y\times\hat x = -\hat z$, so **into the page**.
+2. **Force on a piece $dx$:** $d\vec F = I_2\,dx\,\hat x\times\left(-B\hat z\right) = I_2 B\,dx\,\hat y$ (because $\hat x\times(-\hat z) = +\hat y$).
+3. **Add up the pieces:**
+
+$$
+F = \int_a^b I_2\frac{\mu_0 I_1}{2\pi x}dx = \frac{\mu_0 I_1 I_2}{2\pi}\ln\frac{b}{a}\quad\text{in the }+\hat y\text{ direction}
+$$
+
+4. **Newton's 3rd:** the rod pushes the long wire with the same size force, in $-\hat y$.
+
+</Solution>
+
+### Torque on a current loop
+
+
+$$
+\vec\tau = \vec\mu\times\vec B,\qquad \lvert\tau\rvert = NIAB\sin\theta,\qquad U = -\vec\mu\cdot\vec B
+$$
+
+- Torque tries to **line $\vec\mu$ up with $\vec B$**, like a compass needle.
+- Max torque when $\vec\mu\perp\vec B$. Zero torque when aligned (stable, lowest $U$) or anti-aligned (unstable, highest $U$).
+- This is how electric motors spin.
+
+### The Hall effect
+
+#### The core idea
+When current flows through a strip in a magnetic field, the magnetic force pushes the moving charge carriers toward one edge. Charge accumulates there and the opposite edge is left with the opposite sign, producing a measurable **Hall voltage** across the strip. The sign of that voltage reveals the sign of the carriers.
+
+#### The key point
+> If the carriers are **positive**, they move **with** $I$. If they're **negative**, they move **against** $I$. But $q\vec v$ points along $I$ in **both** cases, so **both kinds get pushed toward the same edge.** The only difference is the **sign** of the charge that piles up there.
+
+#### Four-step method
+1. **Assume** the carriers are positive and move in the direction of $I$.
+2. Find $\vec F = q\vec v\times\vec B$ → this tells you **which edge** they pile up on.
+3. If carriers really are **positive**: that edge is at **higher** potential. If they're **negative**: that edge is at **lower** potential.
+4. Compare with the measured sign of $\Delta V$ → conclude the carrier sign. ✓ (So a Hall measurement **does** determine the sign of the carriers.)
+
+#### Worked example 8.3
+
+A metal strip lies flat in the page, current $I$ to the right ($+\hat x$), $\vec B$ **into** the page ($-\hat z$).
+
+<Solution>
+
+1. Assume positive, moving $+\hat x$.
+2. $\hat x\times(-\hat z) = +\hat y$ → pushed toward the **top** edge.
+3. If positive carriers: top edge higher $V$. If electrons: top edge lower $V$ (electrons pile up there).
+4. Suppose you measure $V_{\text{top}} - V_{\text{bottom}} < 0$ → the carriers are **negative** (electrons).
+
+</Solution>
+
+#### Size of the Hall voltage
+When it settles down, the sideways electric push balances the magnetic push: $\lvert q\rvert E_H = \lvert q\rvert v_d B$, so
+
+$$
+\Delta V_H = v_d B w = \frac{IB}{n\lvert q\rvert t}
+$$
+
+($w$ = width across which you measure, $t$ = thickness along $\vec B$, $n$ = carrier density). Fewer carriers → bigger Hall voltage, which is why semiconductors make great Hall sensors.
+
+<Quiz id="force-1" />
+
+<Quiz id="force-2" />
+
+<Quiz id="force-3" />
+
+<ChapterComplete slug="magnetic-forces" />

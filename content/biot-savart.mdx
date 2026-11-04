@@ -1,0 +1,130 @@
+# Magnetic Fields from Currents: Biot–Savart
+
+### The core idea
+
+**Moving charges create magnetic fields.** A stationary charge produces only an electric field; a moving charge also produces a magnetic field that circulates around its direction of motion.
+
+A current in a long straight wire produces magnetic field lines that form **circles** centered on the wire.
+
+### Right-hand rule for a straight wire
+
+**Grab the wire with your right hand, thumb pointing along the current.** Your fingers curl the way $\vec B$ circles.
+
+```text
+   current OUT of page  ⊙   →  B circles COUNTER-clockwise
+   current INTO page    ⊗   →  B circles clockwise
+```
+
+**Shortcut:** $\vec B$ from a long wire is always **perpendicular** to the line from the wire to your point. So draw that line, rotate it 90° (CCW for ⊙, CW for ⊗), and that's the direction of $\vec B$.
+
+### The Biot–Savart law
+
+**One moving point charge:**
+
+$$
+\vec B = \frac{\mu_0}{4\pi}\,\frac{q\,\vec v \times \hat r}{r^2}
+$$
+
+
+**A tiny piece of current-carrying wire:**
+
+$$
+d\vec B = \frac{\mu_0}{4\pi}\,\frac{I\,d\vec\ell \times \hat r}{r^2}
+$$
+
+
+$\mu_0 = 4\pi\times10^{-7}\ \text{T·m/A}$, so $\dfrac{\mu_0}{4\pi} = 10^{-7}\ \text{T·m/A}$. $\hat r$ points **from the source to the point** where you want $\vec B$.
+
+> [!TIP]
+>
+> **The zero rule:** If a piece of wire points **straight toward or straight away from** your point $P$, then $d\vec\ell \parallel \hat r$, so $d\vec\ell\times\hat r = 0$. **That piece contributes nothing at $P$.** Identify these segments first and set them aside.
+
+### Standard results (memorize these)
+
+| Shape | Field magnitude | Where |
+|---|---|---|
+| Infinite straight wire | $B = \dfrac{\mu_0 I}{2\pi d}$ | distance $d$ from the wire |
+| **Semi-infinite** wire, $P$ is opposite its **end** | $B = \dfrac{\mu_0 I}{4\pi d}$ | $d$ = perpendicular distance (exactly half the infinite wire) |
+| Finite segment | $B = \dfrac{\mu_0 I}{4\pi d}(\sin\alpha_1 + \sin\alpha_2)$ | $\alpha$'s = angles from the perpendicular to each end |
+| **Arc** of angle $\theta$ (radians), radius $R$ | $B = \dfrac{\mu_0 I\,\theta}{4\pi R}$ | at the **center** of the arc |
+| Full circular loop | $B = \dfrac{\mu_0 I}{2R}$ | center (arc with $\theta = 2\pi$) |
+| Loop, on its axis | $B = \dfrac{\mu_0 I R^2}{2(R^2 + z^2)^{3/2}}$ | distance $z$ along the axis |
+| Wire pointing at $P$ | $0$ | anywhere along the wire's line |
+
+> [!WARNING]
+>
+> **Arc angles are in RADIANS.** Half circle → $\pi$. Quarter circle → $\pi/2$. Three-quarters → $3\pi/2$.
+
+**Direction at the center of an arc:** Curl the fingers of your right hand along the current around the arc; your thumb points along $\vec B$ at the center (into or out of the page).
+
+### Where the finite-segment formula comes from (LO 7.2: building an integral)
+
+Wire along the $x$-axis, point $P$ at distance $d$ above the origin. A piece $dx$ at position $x$:
+- distance $r = \sqrt{x^2 + d^2}$
+- $\lvert d\vec\ell\times\hat r\rvert = dx\,\sin\phi = dx\,\dfrac{d}{r}$
+
+$$
+B = \frac{\mu_0 I}{4\pi}\int_{x_1}^{x_2}\frac{d\,dx}{(x^2+d^2)^{3/2}} = \frac{\mu_0 I}{4\pi d}\left[\frac{x}{\sqrt{x^2+d^2}}\right]_{x_1}^{x_2}
+$$
+
+Let $x_1 \to -\infty$, $x_2 \to +\infty$: the bracket becomes $2$ → $\dfrac{\mu_0 I}{2\pi d}$ ✓. From $x_1 = 0$ to $+\infty$: bracket $= 1$ → semi-infinite result ✓.
+
+### Superposition: add vectors, not magnitudes
+
+Unlike potential, $\vec B$ is a **vector**. With several sources:
+1. Find the **magnitude** from each source.
+2. Find the **direction** from each source (right-hand rule).
+3. Break into $x$ and $y$ components, then add.
+
+#### Worked example 6.1: Two wires, one point
+
+Wire 1 sits at the origin with current $I$ **out** of the page. Wire 2 sits at $(d, 0)$ with current $I$ **into** the page. Find $\vec B$ at the point $(0, d)$.
+
+<Solution>
+
+*Wire 1:* distance $d$. ⊙ → CCW. The point is straight above the wire, and CCW circling at the top of a circle means moving **left**.
+$\vec B_1 = \dfrac{\mu_0 I}{2\pi d}(-\hat x)$
+
+*Wire 2:* distance $\sqrt2\,d$. ⊗ → CW. The point is up and to the left of the wire. Clockwise circling at that spot points **up and to the right** (45°).
+$\vec B_2 = \dfrac{\mu_0 I}{2\pi\sqrt2\,d}\cdot\dfrac{\hat x + \hat y}{\sqrt2} = \dfrac{\mu_0 I}{4\pi d}(\hat x + \hat y)$
+
+*Add:*
+
+$$
+\vec B = \frac{\mu_0 I}{4\pi d}\big(-2\hat x + \hat x + \hat y\big) = \frac{\mu_0 I}{4\pi d}(-\hat x + \hat y)
+$$
+
+Magnitude $\dfrac{\sqrt2\,\mu_0 I}{4\pi d}$, pointing **up and to the left** at 45°.
+
+</Solution>
+
+#### Worked example 6.2: The hairpin
+
+A long wire comes in from the far left along the line $y = +R$, makes a **half-circle** of radius $R$ around point $P$ (at the origin) on the right side, and goes back out to the far left along $y = -R$.
+
+<Solution>
+
+- *Top straight part:* semi-infinite, $P$ is opposite its end at distance $R$ → $\dfrac{\mu_0 I}{4\pi R}$
+- *Bottom straight part:* same → $\dfrac{\mu_0 I}{4\pi R}$
+- *Half circle:* $\theta = \pi$ → $\dfrac{\mu_0 I\pi}{4\pi R} = \dfrac{\mu_0 I}{4R}$
+- *Directions:* check each with the right-hand rule. Here all three point the **same** way (all into, or all out of, the page, depending on the current's direction), so they add:
+
+$$
+B = \frac{\mu_0 I}{2\pi R} + \frac{\mu_0 I}{4R}
+$$
+
+
+</Solution>
+
+> [!IMPORTANT]
+>
+> **Exam habit:** For each piece, write one line: *"piece → magnitude → direction (⊙ or ⊗) → reason."* The problem may ask for a sentence justifying the direction, so the right-hand-rule sentence **is** the justification.
+
+### Magnetic dipoles
+
+A current loop acts like a tiny bar magnet.
+- **Magnetic dipole moment:** $\vec\mu = NI\vec A$ (N turns, area $A$).
+- **Direction (right-hand rule #2):** curl your fingers along the current, and your thumb points along $\vec\mu$ (the loop's "north pole").
+- Far away on its axis: $B \approx \dfrac{\mu_0}{4\pi}\dfrac{2\mu}{z^3}$ (same shape as an electric dipole's field).
+
+<ChapterComplete slug="biot-savart" />

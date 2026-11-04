@@ -1,0 +1,189 @@
+# DC Circuits and Kirchhoff's Rules
+
+### The core idea
+
+A pump analogy captures most of how circuits behave:
+- A **battery** acts like a pump: it raises each coulomb of charge to a higher potential. The rise per coulomb is the **emf $\varepsilon$**.
+- A **resistor** is where that potential is used up: charge drops in potential as it passes through.
+- An **ideal wire** has no resistance, so there is **no potential change** along it.
+- Going all the way around any closed loop returns you to the **same potential** you started from.
+
+### emf vs. potential difference (LO 2.5)
+
+- **emf $\varepsilon$** = the work the battery's chemistry does **per coulomb** to push charge from its $-$ terminal to its $+$ terminal (uphill, against the electric field).
+- **Terminal voltage** = the actual $\Delta V$ across the battery's terminals.
+  - Ideal battery: $\Delta V = \varepsilon$ always.
+  - Real battery with internal resistance $r$: $\Delta V = \varepsilon - Ir$ (part of the emf is lost across the internal resistance).
+- Going from $-$ to $+$ through a battery, potential **rises** by $\varepsilon$.
+
+**Combining batteries:**
+- **Series**: emfs add, **with signs** (two batteries facing opposite ways partly cancel).
+- **Parallel, identical**: same $\varepsilon$ as one battery (they just share the work).
+
+### Redrawing circuits (LO 3.5): labeling nodes
+
+Exam circuits are often drawn in unfamiliar layouts. To see the actual structure:
+
+1. **Pick a color** and paint a wire. Keep painting through **every connected wire** until you hit a component (resistor, capacitor, battery). Everything painted that color is **one node** (same potential).
+2. Use a new color for the next node, and so on.
+3. Now describe each component by **which two colors** it connects.
+   - Two components connecting the **same two colors** → **parallel**.
+   - Two components joined at a node that **nothing else touches** → **series**.
+4. Redraw neatly, then simplify step by step.
+
+> [!WARNING]
+>
+> **Short-circuit trap:** If a resistor has **both ends on the same color** (a plain wire runs alongside it), it has $\Delta V = 0$, so **no current** flows through it, and you can remove it from the diagram.
+
+### Resistors in series and parallel
+
+| | **Series** | **Parallel** |
+|---|---|---|
+| Shared | same current $I$ | same voltage $\Delta V$ |
+| Equivalent | $R_{\text{eq}} = R_1 + R_2 + \dots$ | $\dfrac{1}{R_{\text{eq}}} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \dots$ |
+| Intuition | One longer path | More paths side by side, so current flows more easily |
+| Effect | $R_{\text{eq}}$ **bigger** than each | $R_{\text{eq}}$ **smaller** than the smallest |
+
+Handy shortcuts:
+- Two in parallel: $R_{\text{eq}} = \dfrac{R_1 R_2}{R_1 + R_2}$
+- $N$ identical in parallel: $R/N$. $N$ identical in series: $NR$.
+
+#### Worked example 4.1: Simplify step by step
+
+A $6\ \Omega$ and a $3\ \Omega$ resistor are in parallel. That pair is in series with a $4\ \Omega$ resistor. That whole chain is in parallel with a $12\ \Omega$ resistor.
+
+<Solution>
+
+1. $6 \parallel 3 = \dfrac{18}{9} = 2\ \Omega$
+2. $2 + 4 = 6\ \Omega$
+3. $6 \parallel 12 = \dfrac{72}{18} = 4\ \Omega$ ✓
+
+Always write each step on the exam: graders give partial credit for correct steps.
+
+</Solution>
+
+### Kirchhoff's two rules (LO 3.8)
+
+> **Junction rule (charge is conserved):** Current in = current out at every node. $\sum I_{\text{in}} = \sum I_{\text{out}}$
+>
+> **Loop rule (energy is conserved):** Going all the way around any closed loop, the voltage changes add up to zero. $\sum \Delta V = 0$
+
+**Sign rules for walking around a loop:**
+
+| You cross… | in this direction… | $\Delta V$ |
+|---|---|---|
+| Battery | $-$ to $+$ (short line to long line) | $+\varepsilon$ |
+| Battery | $+$ to $-$ | $-\varepsilon$ |
+| Resistor | **same** direction as your assumed current | $-IR$ |
+| Resistor | **against** your assumed current | $+IR$ |
+| Capacitor | $+$ plate to $-$ plate | $-Q/C$ |
+
+> [!TIP]
+>
+> **Guess the current directions; don't stress.** If a current comes out **negative**, it just flows the other way. The **size** is still right. Keep the minus sign during the algebra and flip the arrow only at the end.
+
+### Worked example 4.2: Two batteries in opposition
+
+Three branches connect a top node **a** and a bottom node **b**:
+- **Branch 1:** a 9 V battery (+ side toward **a**) in series with a $3\ \Omega$ resistor
+- **Branch 2:** a $6\ \Omega$ resistor alone
+- **Branch 3:** a 3 V battery (+ side toward **a**) in series with a $2\ \Omega$ resistor
+
+```text
+                 a
+     ┌───────────┬───────────┐
+     │           │           │
+   [3 Ω]       [6 Ω]       [2 Ω]
+     │           │           │
+   ─┴─ +        │         ─┴─ +
+    ─  9 V      │          ─  3 V
+     │           │           │
+     └───────────┴───────────┘
+                 b
+```
+
+<Solution>
+
+**Method A: Loop rule (the textbook way)**
+
+Assume: $I_1$ **up** through branch 1, $I_2$ **down** through branch 2, $I_3$ **up** through branch 3.
+
+- **Junction a:** $I_1 + I_3 = I_2$
+- **Left loop** (up branch 1, down branch 2): $+9 - 3I_1 - 6I_2 = 0$
+- **Right loop** (up branch 3, down branch 2): $+3 - 2I_3 - 6I_2 = 0$
+
+From the loops: $I_1 = 3 - 2I_2$ and $I_3 = 1.5 - 3I_2$. Plug into the junction:
+$3 - 2I_2 + 1.5 - 3I_2 = I_2 \Rightarrow I_2 = 0.75\ \text{A}$
+
+So $I_1 = 1.5\ \text{A}$ (up ✓) and $I_3 = -0.75\ \text{A}$ → **it actually flows down** through the 3 V battery. The stronger 9 V battery is **forcing current backwards** through the weaker one (charging it).
+
+**Method B: Node-voltage shortcut (great when all branches share two nodes)**
+
+Call $V_b = 0$ and $V_a = V$. Write each branch's current in terms of $V$:
+
+$$
+\underbrace{\frac{9-V}{3}}_{\text{up, br. 1}} + \underbrace{\frac{3-V}{2}}_{\text{up, br. 3}} = \underbrace{\frac{V}{6}}_{\text{down, br. 2}}
+$$
+
+Multiply by 6: $18 - 2V + 9 - 3V = V \Rightarrow V = 4.5\ \text{V}$. Then the currents fall right out. Same answers, half the algebra.
+
+**Power bookkeeping (LO 3.7)**
+- Heat in resistors: $1.5^2(3) + 0.75^2(6) + 0.75^2(2) = 6.75 + 3.375 + 1.125 = 11.25\ \text{W}$
+- 9 V battery **delivers** $9 \times 1.5 = 13.5\ \text{W}$
+- 3 V battery **absorbs** $3 \times 0.75 = 2.25\ \text{W}$ (current enters its + terminal)
+- Check: $13.5 - 2.25 = 11.25$ ✓ Energy is conserved.
+
+</Solution>
+
+> [!IMPORTANT]
+>
+> **"How much power does the circuit use?"** means the total power **dissipated in the resistors**, which equals the **net** power delivered by the batteries. When a battery has current pushed backward through it, it counts as **absorbing** power, not providing it. Check your result both ways.
+
+### Capacitors in DC circuits: the two limits
+
+A capacitor in a DC circuit has two simple limiting behaviors:
+
+| Moment | Capacitor acts like… | Why |
+|---|---|---|
+| **Just after switch closes** ($t = 0^+$), uncharged | a **plain wire** ($\Delta V_C = 0$) | No charge yet → $\Delta V = Q/C = 0$ |
+| **Long time later** ($t \to \infty$), "fully charged" | a **broken wire / gap** ($I_C = 0$) | Fully charged, so no more charge flows onto the plates |
+
+
+#### Worked example 4.3: A floating dust grain (steady state + mechanics)
+
+A battery $\varepsilon$ is in series with $R_1 = R$. After $R_1$, the circuit splits into two parallel branches: branch A is $R_2 = 2R$; branch B is $R_3 = R$ in series with a parallel-plate capacitor $C$ (plate gap $s$, plates horizontal). Long after the switch closes, a dust grain of mass $m$ and charge $q$ floats motionless between the plates. What is $\varepsilon$?
+
+<Solution>
+
+**Step 1: Long time → capacitor = gap.** No current in branch B, so **no current through $R_3$**, so $R_3$ has no voltage drop.
+
+**Step 2: The circuit is now just $R_1$ and $R_2$ in series.** $I = \dfrac{\varepsilon}{3R}$.
+
+**Step 3: Voltage across the capacitor.** Branch B is in parallel with branch A, and $R_3$ drops nothing, so:
+$\Delta V_C = \Delta V_{R_2} = I(2R) = \dfrac{2\varepsilon}{3}$
+
+**Step 4: Field between plates.** $E = \dfrac{\Delta V_C}{s} = \dfrac{2\varepsilon}{3s}$
+
+**Step 5: Floating means forces balance.** $qE = mg \Rightarrow q\dfrac{2\varepsilon}{3s} = mg \Rightarrow \boxed{\varepsilon = \dfrac{3mgs}{2q}}$
+
+**Step 6: Check units.** $\dfrac{\text{kg}\cdot\text{m/s}^2\cdot\text{m}}{\text{C}} = \dfrac{\text{J}}{\text{C}} = \text{V}$ ✓
+
+*Bonus (t = 0):* Right after closing, the capacitor is a wire, so $R_3 \parallel R_2 = \dfrac{2R\cdot R}{3R} = \dfrac{2R}{3}$, total $\dfrac{5R}{3}$, initial current $\dfrac{3\varepsilon}{5R}$. This differs from the long-time current.
+
+</Solution>
+
+### "What happens if…?" (LO 3.10): reasoning without numbers
+
+| Change | Effect |
+|---|---|
+| Add a resistor **in parallel** to an ideal battery | $R_{\text{eq}}$ ↓, total current ↑; voltage across the *other* parallel branches **unchanged** |
+| Add a resistor **in series** | $R_{\text{eq}}$ ↑, current ↓ everywhere in that path |
+| Remove (open) one of several parallel branches | $R_{\text{eq}}$ ↑, total current ↓; parts in series with the battery get **less** voltage, the remaining parallel parts get **more** |
+| Short out a component (wire across it) | That component gets $0$ V and $0$ A; the rest of the circuit gets **more** current |
+| Bulb brightness | $\propto P = I^2R = (\Delta V)^2/R$ |
+
+<Quiz id="circ-1" />
+
+<Quiz id="circ-2" />
+
+<ChapterComplete slug="dc-circuits" />

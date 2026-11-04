@@ -1,0 +1,67 @@
+# Current and Resistance
+
+### The core idea
+
+A metal wire contains an enormous number of free electrons. When a battery is connected, an electric field is set up inside the wire and pushes on all of them. They collide with the atomic lattice constantly, so their average **drift velocity** is small (around a millimeter per second), but the whole population starts drifting **at the same time**, which is why a circuit responds almost instantly.
+
+- **Current $I$** = how much charge passes a doorway per second. $I = \dfrac{dQ}{dt}$ (amperes, A = C/s).
+- **Current density $J$** = current per area of doorway. $J = I/A$.
+- **Resistance $R$** = how strongly a component opposes current: $R = \Delta V / I$.
+
+### Microscopic and macroscopic descriptions
+
+| Microscopic | Macroscopic |
+|---|---|
+| $n$ = carriers per m³, $q$ = charge each, $v_d$ = drift speed | $I = n\,\lvert q\rvert\,v_d\,A$ |
+| $J = n\,\lvert q\rvert\,v_d$ | $I = JA$ |
+| $\vec J = \sigma\vec E$ (Ohm's law, microscopic form) | $\Delta V = IR$ (Ohm's law, circuit form) |
+| Conductivity $\sigma$, resistivity $\rho = 1/\sigma$ | $R = \dfrac{\rho L}{A}$ |
+| Field inside wire | $E = \dfrac{\Delta V}{L}$ |
+
+> [!NOTE]
+>
+> **Wait, isn't $E = 0$ inside conductors?** Only when nothing is moving (equilibrium). A wire carrying current is **not** in equilibrium. A small field inside the wire drives the current.
+
+### Resistance of a wire: $R = \rho L / A$
+
+- **Longer** wire ($L$↑) → **more** resistance.
+- **Larger** cross-section ($A$↑) → **less** resistance.
+- **Material** matters through $\rho$ (copper: tiny $\rho$; rubber: huge $\rho$).
+
+> [!TIP]
+>
+> **Reshaping a wire (squishing or stretching):** The amount of metal doesn't change, so **volume $LA$ stays constant**. If you change $L$ by a factor $s$, then $A$ changes by $1/s$, and
+>
+> $$
+> R_{\text{new}} = \rho\frac{sL}{A/s} = s^2 R
+> $$
+>
+> Example: **squash** a wire to **half** its length (it gets fatter) → $R$ becomes $R/4$.
+
+#### Worked example 3.1: Comparing two wires
+
+Wire X: length $2L$, area $3A$. Wire Y: length $L$, area $A$. Same metal.
+$R_X = \rho\dfrac{2L}{3A} = \tfrac23\,\rho\dfrac{L}{A}$, $R_Y = \rho\dfrac{L}{A}$. → **X has less resistance.** Always write each one as a multiple of $\rho L/A$ and compare the numbers.
+
+### Same current, different cross-sections
+
+Two wires of **different thickness** joined end to end (series) carry the **same current $I$** (charge can't pile up in the middle). But in the **thinner** wire:
+- $J = I/A$ is **bigger**
+- $v_d = J/(n\lvert q\rvert)$ is **bigger**
+- $E = J/\sigma$ is **bigger**
+
+### Power
+
+
+$$
+P = I\,\Delta V = I^2R = \frac{(\Delta V)^2}{R}
+$$
+
+
+Use whichever form uses what you know. For a battery: $P_{\text{delivered}} = \varepsilon I$.
+
+<Quiz id="res-1" />
+
+<Quiz id="res-2" />
+
+<ChapterComplete slug="current-and-resistance" />

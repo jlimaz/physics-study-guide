@@ -125,7 +125,7 @@ export function FlashcardDeck({ cards }: { cards: Card[] }) {
       </p>
 
       {current === undefined ? (
-        <div className="rounded-3xl border border-dashed border-line p-12 text-center text-muted">
+        <div className="rounded-xl border border-dashed border-line p-12 text-center text-muted">
           {filter === "review" ? "Your review pile is empty." : "You've seen every card."}
         </div>
       ) : (
@@ -139,7 +139,7 @@ export function FlashcardDeck({ cards }: { cards: Card[] }) {
             <div className={`flip-inner ${flipped ? "is-flipped" : ""}`}>
               <div className="flip-face border-line bg-card">
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Question</span>
-                <div className="flash-text font-display text-2xl leading-snug">{cards[current].front}</div>
+                <div className="flash-text text-2xl leading-snug">{cards[current].front}</div>
                 <span className="text-xs text-muted">Click or press space to flip</span>
               </div>
               <div className="flip-face flip-back border-accent/40 bg-subtle">
@@ -160,7 +160,7 @@ export function FlashcardDeck({ cards }: { cards: Card[] }) {
               <button type="button" onClick={() => mark("review")} className="min-h-11 rounded-xl border border-bad/50 px-4 font-medium text-bad hover:bg-bad/10">
                 Review again <kbd className="ml-1 text-xs opacity-60">R</kbd>
               </button>
-              <button type="button" onClick={() => mark("know")} className="min-h-11 rounded-xl bg-good px-4 font-medium text-white hover:opacity-90">
+              <button type="button" onClick={() => mark("know")} className="min-h-11 rounded-xl bg-good px-4 font-medium text-white dark:text-black hover:opacity-90">
                 Know it <kbd className="ml-1 text-xs opacity-70">K</kbd>
               </button>
             </div>

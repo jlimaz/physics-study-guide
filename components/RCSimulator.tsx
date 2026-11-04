@@ -91,9 +91,9 @@ export function RCSimulator({ title }: { title?: string }) {
   ];
 
   return (
-    <div className="not-prose my-8 rounded-2xl border border-line bg-card p-5 sm:p-6">
+    <div className="not-prose my-8 rounded-xl border border-line bg-card p-5 sm:p-6">
       <div className="mb-1 text-xs font-semibold uppercase tracking-[0.14em] text-accent">Interactive</div>
-      <h4 className="mb-4 font-display text-xl font-semibold">{title ?? "RC circuit"}</h4>
+      <h4 className="mb-4 text-xl font-semibold">{title ?? "RC circuit"}</h4>
 
       <div className="grid gap-6 lg:grid-cols-[1fr_15rem]">
         <div>

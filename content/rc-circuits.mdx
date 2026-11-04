@@ -1,0 +1,134 @@
+# RC Circuits
+
+### The core idea
+
+When an uncharged capacitor is connected to a battery through a resistor, the current is largest at the start, because an empty capacitor has no voltage opposing the battery. As charge builds up, the capacitor's voltage $q/C$ opposes the battery more and more, so the current falls off exponentially. The capacitor approaches full charge asymptotically; after a few time constants it is effectively full.
+
+**The time constant** $\tau = RC$ sets the timescale. A larger resistance or a larger capacitance makes the process slower.
+
+### Charging (switch connects an uncharged $C$ to battery $\varepsilon$ through $R$)
+
+
+$$
+q(t) = Q_{\max}\left(1 - e^{-t/\tau}\right),\quad Q_{\max} = C\varepsilon
+$$
+
+
+$$
+\Delta V_C(t) = \varepsilon\left(1 - e^{-t/\tau}\right)
+$$
+
+
+$$
+I(t) = \frac{\varepsilon}{R}\,e^{-t/\tau}
+$$
+
+
+**Shapes:**
+- Charge and capacitor voltage: start at **0**, **rise** and level off at the max.
+- Current (and resistor voltage): starts at its **max $\varepsilon/R$** (capacitor is a wire), then **decays to 0** (capacitor is a gap).
+
+### Discharging (charged $C$ connected across $R$, no battery)
+
+
+$$
+q(t) = Q_0\,e^{-t/\tau},\qquad I(t) = \frac{Q_0}{RC}\,e^{-t/\tau},\qquad \Delta V_C(t) = V_0\,e^{-t/\tau}
+$$
+
+
+### Numbers to memorize
+
+| $t$ | $e^{-t/\tau}$ | Charging: $q/Q_{\max}$ |
+|---|---|---|
+| $\tau$ | 0.37 | **63%** |
+| $2\tau$ | 0.14 | 86% |
+| $3\tau$ | 0.05 | 95% |
+| $5\tau$ | 0.007 | >99% ("basically full") |
+| $\tau\ln 2 \approx 0.69\tau$ | 0.5 | **50%** (the "half-life") |
+
+### Solving for time
+
+Any time you need "**when** does something reach a value?":
+1. Get the exponential **alone** on one side: $e^{-t/\tau} = x$
+2. Take $\ln$ of both sides: $-t/\tau = \ln x$
+3. $\boxed{t = \tau\ln(1/x)}$ (positive, since $x < 1$)
+
+### More than one R or C? Find the equivalents first
+
+If everything sits in **one single loop**, combine all resistors into $R_{\text{eq}}$ and all capacitors into $C_{\text{eq}}$, and use $\tau = R_{\text{eq}}C_{\text{eq}}$.
+
+> [!TIP]
+>
+> **More complex circuits:** $R$ in $\tau$ is the resistance **"seen" by the capacitor**. Remove the capacitor, replace each ideal battery with a plain wire, and find the resistance between the two spots where the capacitor was connected.
+
+### Energy during charging: the square trap
+
+
+$$
+U(t) = \frac{q(t)^2}{2C} = U_{\max}\left(1 - e^{-t/\tau}\right)^2,\qquad U_{\max} = \tfrac12 C\varepsilon^2
+$$
+
+
+> [!WARNING]
+>
+> **Energy is not charge.** Because $U \propto q^2$, a "fraction of max **energy**" is not the same moment as the same "fraction of max **charge**." Always convert first:
+>
+> $$
+> \frac{U}{U_{\max}} = f \quad\Longleftrightarrow\quad \frac{q}{Q_{\max}} = \sqrt f
+> $$
+>
+
+#### Worked example 5.1: When is the energy at 25%?
+
+A single loop: battery $\varepsilon$, resistors $4R$ and $R$, capacitors $3C$ and $6C$ (all in series), switch closes at $t = 0$, capacitors start uncharged.
+
+<Solution>
+
+**Step 1: Equivalents.**
+$R_{\text{eq}} = 4R + R = 5R$
+$C_{\text{eq}} = \dfrac{3C\cdot 6C}{3C + 6C} = 2C$
+$\tau = R_{\text{eq}}C_{\text{eq}} = 10RC$
+
+**Step 2a: When is the charge at 75% of its maximum?**
+$1 - e^{-t/\tau} = 0.75 \Rightarrow e^{-t/\tau} = 0.25 \Rightarrow t = \tau\ln 4 = 10RC\ln 4$
+
+**Step 2b: When is the stored energy at 25% of its maximum?**
+$\left(1 - e^{-t/\tau}\right)^2 = \tfrac14 \Rightarrow 1 - e^{-t/\tau} = \tfrac12 \Rightarrow e^{-t/\tau} = \tfrac12 \Rightarrow t = \tau\ln 2 = 10RC\ln 2$
+
+Notice: at the moment the **energy** is only 25% full, the **charge** is already 50% full.
+
+**Step 3: Check.** The answer has units of $RC$ = seconds ✓. It's positive ✓. It's shorter than the 75%-charge time ✓ (makes sense, since 50% charge comes before 75% charge).
+
+</Solution>
+
+### Where does the battery's energy go?
+
+While fully charging a capacitor, the battery delivers $Q_{\max}\varepsilon = C\varepsilon^2$. The capacitor keeps $\tfrac12C\varepsilon^2$. The resistor turns the **other half** into heat, **regardless of $R$**.
+
+### Deriving the exponentials
+
+Loop rule for charging: $\varepsilon - IR - \dfrac{q}{C} = 0$ with $I = \dfrac{dq}{dt}$:
+
+$$
+\frac{dq}{dt} = \frac{C\varepsilon - q}{RC} \;\Rightarrow\; \int_0^q \frac{dq'}{C\varepsilon - q'} = \int_0^t \frac{dt'}{RC} \;\Rightarrow\; q = C\varepsilon\left(1 - e^{-t/RC}\right)
+$$
+
+
+### Preview: inductors (LR and LC)
+
+These are mainly for Quiz 3, but LO 3.9 names them, so know the basics:
+- An inductor **hates changes in current**. $\Delta V_L = -L\,\dfrac{dI}{dt}$.
+- **Behavior is opposite to a capacitor:** at $t = 0^+$ an inductor acts like a **gap** (current can't jump), and after a long time it acts like a **wire**.
+- LR circuit: $I(t) = \dfrac{\varepsilon}{R}\left(1 - e^{-t/\tau}\right)$ with $\tau = L/R$.
+- LC circuit: energy sloshes between $C$ and $L$ forever; $\omega = \dfrac{1}{\sqrt{LC}}$.
+- Energy in an inductor: $U = \tfrac12 L I^2$.
+
+<RCSimulator title="Play with an RC circuit" />
+
+<Quiz id="rc-1" />
+
+<Quiz id="rc-2" />
+
+<Quiz id="rc-3" />
+
+<ChapterComplete slug="rc-circuits" />

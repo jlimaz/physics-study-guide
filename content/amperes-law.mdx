@@ -1,0 +1,157 @@
+# Ampère's Law
+
+### The core idea
+
+Choose any closed path, called an **Amperian loop**. Go around it, and at each step multiply the component of $\vec B$ along your direction of travel by the step length; add these up. Ampère's law says the total depends only on the current passing through the loop:
+
+> **The circulation of $\vec B$ around a closed loop equals $\mu_0$ times the current enclosed by the loop.**
+
+
+$$
+\boxed{\oint \vec B\cdot d\vec\ell = \mu_0\, I_{\text{enc}}}
+$$
+
+
+It's the magnetic twin of Gauss's law. Gauss uses a **closed surface** and **enclosed charge**. Ampère uses a **closed loop** and **enclosed current**.
+
+### Sign convention
+
+**Right-hand rule for loops:** Curl your right-hand fingers in the direction you walk around the loop. Your **thumb** points in the **positive current** direction.
+
+| Direction of travel around the loop (as seen on the page) | Current **out** of page ⊙ counts as | Current **into** page ⊗ counts as |
+|---|---|---|
+| Counterclockwise ↺ | $+$ | $-$ |
+| Clockwise ↻ | $-$ | $+$ |
+
+> [!WARNING]
+>
+> **Two big traps:**
+> 1. Only **enclosed** current goes on the right side, but the $\vec B$ on the left side is made by **all** currents, inside and outside the loop.
+> 2. $\oint\vec B\cdot d\vec\ell = 0$ does **not** mean $\vec B = 0$ on the loop. It just means the pluses and minuses cancel overall.
+
+### When Ampère's law is useful
+
+Only when **symmetry** lets you pull $B$ out of the integral, so that $\oint \vec B\cdot d\vec\ell = B \times (\text{length of the parts where } \vec B \parallel d\vec\ell)$.
+
+| Current shape | Field shape (from symmetry) | Best Amperian loop |
+|---|---|---|
+| Long straight wire (thin, thick, or coax) | circles around the axis | circle centered on the axis |
+| Infinite flat sheet or slab | parallel to the sheet, perpendicular to $\vec J$, **opposite** directions on the two sides | rectangle straddling the sheet, **symmetric** about its middle |
+| Long solenoid | uniform inside along the axis, ≈ 0 outside | rectangle, one side inside, one outside |
+| Toroid | circles inside the donut | circle inside the donut |
+
+### Writing up Ampère's law on the exam
+
+1. **Symmetry claim:** "By symmetry, $\vec B$ points ___ and its magnitude depends only on ___."
+2. **Loop:** "I choose a ___ of ___ (size), oriented ___." *(Draw it on the figure!)*
+3. **Left side:** "$\oint\vec B\cdot d\vec\ell = $ ___ because on these sides $\vec B\parallel d\vec\ell$ and on those sides $\vec B\perp d\vec\ell$."
+4. **Right side:** "$I_{\text{enc}} = \int \vec J\cdot d\vec A$ over the area inside my loop $=$ ___."
+5. **Solve** for $B$, then **state direction** with a right-hand-rule sentence.
+6. **Check:** limiting case or units ($\mu_0 \times \text{A/m} = \text{T}$).
+
+### Worked example 7.1: Thick wire, uniform current
+
+A long solid wire, radius $R$, carries current $I$ spread **uniformly**: $J = \dfrac{I}{\pi R^2}$.
+
+<Solution>
+
+**Outside ($r > R$):** circle of radius $r$. $B(2\pi r) = \mu_0 I \Rightarrow B = \dfrac{\mu_0 I}{2\pi r}$ (just like a thin wire!)
+
+**Inside ($r < R$):** circle of radius $r$. Enclosed current = $J \times \pi r^2 = I\dfrac{r^2}{R^2}$.
+$B(2\pi r) = \mu_0 I\dfrac{r^2}{R^2} \Rightarrow B = \dfrac{\mu_0 I r}{2\pi R^2}$ (grows linearly, zero at the center)
+
+✓ Both formulas agree at $r = R$.
+
+</Solution>
+
+### Worked example 7.2: Thick wire, non-uniform current (LO 7.2)
+
+Same wire, but $J(r) = J_0\dfrac{r}{R}$ (more current near the surface).
+
+<Solution>
+
+When $J$ changes with position, **add it up in thin rings**: a ring of radius $r'$ and thickness $dr'$ has area $dA = 2\pi r'\,dr'$.
+
+$$
+I_{\text{enc}}(r) = \int_0^r J_0\frac{r'}{R}\,2\pi r'\,dr' = \frac{2\pi J_0 r^3}{3R}
+$$
+
+
+$$
+B(2\pi r) = \mu_0\frac{2\pi J_0 r^3}{3R} \Rightarrow B = \frac{\mu_0 J_0 r^2}{3R}\quad (r<R)
+$$
+
+
+</Solution>
+
+### Worked example 7.3: The infinite slab (uniform $J$)
+
+An infinite slab of conductor fills $-d \le z \le d$ (infinite in $x$ and $y$). Uniform current density $J$ flows **out of the page** (toward you). Take $z$ as "up" on the page.
+
+<Solution>
+
+**Symmetry:** Think of the slab as many wires side by side, all with current out of the page. Their fields add up to point **parallel to the slab**: **left above** the middle and **right below** it. (Check with one wire: ⊙ → CCW → at the top of a CCW circle you're moving left ✓). Exactly at $z = 0$, by symmetry, $B = 0$.
+
+**Loop:** a rectangle of width $\ell$ (along the slab), with its top edge at height $+z$ and its bottom edge at $-z$, **symmetric** about the middle plane. Go CCW so that out-of-page current counts as positive.
+
+**Left side:** On the top and bottom edges, $\vec B$ is parallel to the path, and by symmetry it has the same size on both, so each gives $B\ell$. On the vertical edges, $\vec B \perp d\vec\ell$, so they give $0$. Total: $2B\ell$.
+
+**Right side, inside the slab ($\lvert z\rvert < d$):** $I_{\text{enc}} = J \times (\text{area}) = J(2z\ell)$
+
+$$
+2B\ell = \mu_0 J\,2z\ell \Rightarrow B = \mu_0 J\lvert z\rvert
+$$
+
+
+**Right side, outside the slab ($\lvert z\rvert > d$):** the loop now encloses the **whole thickness**: $I_{\text{enc}} = J(2d)\ell$
+
+$$
+B = \mu_0 J d \quad\text{(constant: it does not decrease with distance)}
+$$
+
+
+</Solution>
+
+### Worked example 7.4: Slab with a varying current density
+
+Same slab, but now $J(z) = J_0\cos\!\left(\dfrac{\pi z}{2d}\right)$ (strongest in the middle, zero at the edges).
+
+<Solution>
+
+**Is the symmetric-loop trick still OK?** Yes, because $J(z) = J(-z)$: the current is **mirror-symmetric** about the middle plane, so $B = 0$ at $z = 0$ and $B$ has the same size at $\pm z$.
+
+**Enclosed current (per width $\ell$):** add thin horizontal strips of thickness $dz'$:
+
+$$
+I_{\text{enc}} = \ell\int_{-z}^{z} J_0\cos\!\left(\frac{\pi z'}{2d}\right)dz' = \ell J_0\cdot\frac{4d}{\pi}\sin\!\left(\frac{\pi z}{2d}\right)
+$$
+
+
+$$
+2B\ell = \mu_0 I_{\text{enc}} \Rightarrow \boxed{B(z) = \frac{2\mu_0 J_0 d}{\pi}\sin\!\left(\frac{\pi\lvert z\rvert}{2d}\right)}\quad(\lvert z\rvert\le d)
+$$
+
+
+**Outside:** the integral stops at $\pm d$ → $B = \dfrac{2\mu_0 J_0 d}{\pi}$ (constant).
+
+**Checks:** $B(0) = 0$ ✓. Inside and outside agree at $z = d$ ✓. Units: $\mu_0 \cdot (\text{A/m}^2)\cdot\text{m} = \mu_0\cdot\text{A/m} = \text{T}$ ✓.
+**Direction:** same as the uniform slab: left above, right below (for current out of the page).
+
+</Solution>
+
+> [!TIP]
+>
+> **The recipe for any non-uniform $J$:** $I_{\text{enc}} = \int J\,dA$, where you **slice the enclosed area into pieces on which $J$ is constant** (rings for cylinders, strips for slabs). The rest of Ampère's law is unchanged. If the problem allows it, you may leave $I_{\text{enc}}$ as a definite integral.
+
+### Other standard results
+
+- **Solenoid** ($n$ turns per meter): $B = \mu_0 n I$ inside, ≈ 0 outside. (Rectangle loop of length $\ell$: $B\ell = \mu_0(n\ell)I$.)
+- **Toroid** ($N$ turns): $B = \dfrac{\mu_0 N I}{2\pi r}$ inside the donut, 0 outside.
+- **Coax cable** (equal and opposite currents): $B = 0$ outside, because $I_{\text{enc}} = I - I = 0$.
+- **Thin flat sheet** carrying current per unit width $j_s$ (A/m): $B = \dfrac{\mu_0 j_s}{2}$ on each side.
+
+<Quiz id="amp-1" />
+
+<Quiz id="amp-2" />
+
+<ChapterComplete slug="amperes-law" />
