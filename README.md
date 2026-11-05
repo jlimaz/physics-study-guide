@@ -41,4 +41,3 @@ Progress (quiz answers, completed chapters, checklist ticks, flashcard piles) is
 
 - **Nextra is pinned to 4.6.1, with `zod` pinned to 4.1.13 for it** (`overrides` in `package.json`). Nextra 4.6.1's `<Layout>` validates its props against a schema that requires `children` after removing `children`; zod releases after 4.1.x reject that, and every page fails to prerender with `Invalid input: expected nonoptional, received undefined → at children`. Remove the override only after upgrading to a Nextra release that fixes it.
 - Cache Components is not enabled; Nextra's pages are plain static generation.
-- The original exam PDFs go in `public/exams/`. They are git-ignored, so the "view the figure" links only work where those files exist.

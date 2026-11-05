@@ -7,7 +7,6 @@ import {
   Chapters,
   ExamFR,
   ExamMC,
-  ExamPdf,
   Flashcards,
   Progress,
   Quiz,
@@ -32,7 +31,6 @@ const custom = {
   Tools,
   ExamMC,
   ExamFR,
-  ExamPdf,
 };
 
 export function useMDXComponents(components?: MDXComponents) {

@@ -93,22 +93,6 @@ function examFor(id: string) {
   return e;
 }
 
-function PdfLink({ pdf, page, label }: { pdf: string; page?: number; label?: string }) {
-  return (
-    <a href={page ? `${pdf}#page=${page}` : pdf} target="_blank" rel="noreferrer" className="text-sm">
-      {label ?? `View the figure (PDF page ${page})`} ↗
-    </a>
-  );
-}
-
-export function ExamPdf({ exam }: { exam: string }) {
-  return (
-    <p>
-      <PdfLink pdf={examFor(exam).pdf} label="Open the original exam PDF" />
-    </p>
-  );
-}
-
 export function ExamMC({ exam }: { exam: string }) {
   const e = examFor(exam);
   return (
@@ -133,11 +117,6 @@ export function ExamMC({ exam }: { exam: string }) {
             options={q.options.map((o, k) => ({ content: <MarkdownInline>{o}</MarkdownInline>, correct: k === q.answer }))}
             explanation={<Markdown>{q.explanation}</Markdown>}
           />
-          {q.figure && (
-            <div className="-mt-5 mb-8 pl-1">
-              <PdfLink pdf={e.pdf} page={q.page} />
-            </div>
-          )}
         </div>
       ))}
     </>
@@ -158,9 +137,6 @@ export function ExamFR({ exam }: { exam: string }) {
                 <b>Figure:</b> {q.figure}
               </p>
             )}
-          </div>
-          <div className="mt-2">
-            <PdfLink pdf={e.pdf} page={q.page} />
           </div>
           <Reveal summary="Hint: which method?">
             <div className="py-3">

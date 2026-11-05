@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
-import { Head } from "nextra/components";
+import { Head, Search } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import "nextra-theme-docs/style.css";
 import "katex/dist/katex.min.css";
@@ -30,6 +30,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <Layout
           navbar={navbar}
+          search={<Search placeholder="Search the study guide…" />}
           footer={footer}
           pageMap={await getPageMap()}
           editLink={null}
